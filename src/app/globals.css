@@ -2,6 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .layout-padding {
+    @apply pb-20 sm:pb-24 md:pb-32 lg:pb-0;
+  }
+  .layout-margin {
+    @apply mb-20 sm:mb-24 md:mb-32 lg:mb-0;
+  }
+  .layout-height {
+    @apply h-[calc(100dvh-208px)]
+    sm:h-[calc(100dvh-228px)]
+    md:h-[calc(100dvh-260px)]
+    lg:h-[calc(100dvh-176px)];
+  }
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -16,12 +31,62 @@
   }
 }
 
+* {
+  box-sizing: border-box;
+}
+
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  direction: rtl;
+}
+
+body,
+html {
+  position: relative;
+}
+
+/* Persian Numeric Setup */
+body,
+input {
+  -moz-font-feature-settings: "ss03";
+  -webkit-font-feature-settings: "ss03";
+  font-feature-settings: "ss03";
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: white;
+  border-inline: 1px solid #fafafa;
+  border-block: none;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #e0e6ff;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #e4e4e4;
+}
+
+@media screen and (max-width: 768px) {
+  ::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* make scrollbar transparent */
+  }
+}
+
+@layer base {
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"] {
+    -webkit-appearance: none;
+    margin: 0;
+    -moz-appearance: textfield !important;
+  }
 }
