@@ -1,13 +1,17 @@
+"use client";
+
 import { FC, useState } from "react";
+
 import Card from "./Card";
 import Options from "./Options";
+
 import { MoveProps } from "./models";
 
 const Move: FC<MoveProps> = ({ name, effective_muscle, image_url }) => {
   const [isOptionsOpen, setIsOptionsOpen] = useState(false);
 
   return (
-    <div className="flex flex-col bg-white">
+    <div className="flex flex-col border-left border-bottom bg-white">
       {isOptionsOpen ? (
         <Options
           name={name}

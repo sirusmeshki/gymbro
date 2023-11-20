@@ -9,9 +9,9 @@ export default function Home() {
         layout-height
         flex
         w-full
-        shadow-bottom
+        border-bottom
       ">
-      <div className="w-full justify-center items-center hidden md:flex">
+      <div className="w-full max-w-[480px] justify-center items-center hidden md:flex border-left">
         <Image
           src="/images/character-1.svg"
           className="w-fit mx-3"
@@ -20,7 +20,7 @@ export default function Home() {
           height={100}
         />
       </div>
-      <section className="flex flex-col gap-10 h-full w-full lg:min-w-[960px] shadow-right pt-8 overflow-y-auto">
+      <section className="flex flex-col gap-10 h-full w-full border-left pt-8 overflow-y-auto">
         <div className="w-full h-full flex gap-4 flex-col px-2 justify-center items-center">
           <Image
             src="/images/character-3.svg"
@@ -39,7 +39,7 @@ export default function Home() {
         </div>
         <Link
           href="/moves"
-          className="w-full h-24 sm:h-32  md:h-40 shadow-top shrink-0">
+          className="w-full h-24 sm:h-32  md:h-40 border-top shrink-0">
           <Button
             cta="همین حالا بساز"
             placeholder={
@@ -54,7 +54,7 @@ export default function Home() {
           />
         </Link>
       </section>
-      <div className="w-full justify-center items-center shadow-right z-10 hidden xl:flex">
+      {/* <div className="w-full justify-center items-center border-left z-10 hidden xl:flex">
         <Image
           src="/images/character-2.svg"
           className="w-fit mx-3"
@@ -62,7 +62,7 @@ export default function Home() {
           width={100}
           height={100}
         />
-      </div>
+      </div> */}
     </main>
   );
 }

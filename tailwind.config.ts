@@ -23,8 +23,11 @@ const config: Config = {
       colors: {
         lightGreen: "#C9E4DE",
         lightPurple: "#E0E6FF",
+        lightBlue: "#CDE6FA",
+        borderColor: "#000",
+        // borderColor: "#f1f1f1",
       },
-      boxShadow: {
+      boxborder: {
         //Borders
         rb: "0.5px 0.5px  0 0 #CCC",
         top: "0 -0.5px 0 0 #CCC",

@@ -1,11 +1,13 @@
-import { FC, Key } from "react";
+import { FC } from "react";
+
 import Move from "../Move";
-import { MovesProps } from "../Move/models";
+
+import { MovesProps } from "../Move/Options/models";
 
 const MovesList: FC<MovesProps> = ({ moves }) => {
   return (
     <>
-      {moves.map((move) => (
+      {moves?.map((move) => (
         <Move
           key={move.id}
           name={move.name}

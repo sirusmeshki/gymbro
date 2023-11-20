@@ -56,18 +56,19 @@ const Buttons: FC<ButtonsProps> = ({ className }) => {
         sm:h-24
         md:h-32
         lg:h-44
-        shadow-top
-        lg:shadow-none
+        border-top
+        lg:border-none
         `,
         className && className
       )}>
       {buttons.map((button, index) => (
-        <li key={index} className="w-full h-full lg:w-60">
+        <li key={index} className="w-full h-full">
           <Link className={clsx(`w-full h-full lg:w-60`)} href={button.href}>
             <Button
-              className={
-                activeSegment === button.activeSegment ? "bg-blue-100" : ""
-              }
+              className={clsx(
+                activeSegment === button.activeSegment ? "bg-lightBlue" : "",
+                "border-left"
+              )}
               placeholder={button.placeholder}
               icon={button.icon}
               alt={button.href}

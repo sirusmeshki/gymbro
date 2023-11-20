@@ -41,11 +41,10 @@ const Button: FC<ButtonProps> = ({
         text-base
         overflow-hidden
         text-neutral-800
-        shadow-right
-        focus-within:bg-blue-100
+        focus-within:bg-lightBlue
         group
         `,
-        cta && "w-full font-semibold text-xl bg-blue-100",
+        cta && "w-full font-semibold text-xl bg-lightBlue",
         className && className
       )}>
       <div
@@ -63,7 +62,7 @@ const Button: FC<ButtonProps> = ({
           duration-200
           ease-transition-button
           translate-y-full
-          bg-blue-100
+        bg-lightBlue
           delay-75
           group-hover:translate-y-0
           `,
@@ -83,7 +82,7 @@ const Button: FC<ButtonProps> = ({
       )}
 
       {cta && (
-        <div className="flex items-center justify-center w-full h-full text-sm font-extrabold bg-lightPurple">
+        <div className="flex items-center justify-center w-full h-full text-sm font-extrabold">
           {cta}
         </div>
       )}

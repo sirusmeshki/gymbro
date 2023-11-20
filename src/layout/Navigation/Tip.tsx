@@ -18,14 +18,15 @@ const Tip = ({ className }: { className?: string }) => {
         bg-lightGreen 
         overflow-hidden
         group
-        shadow-bottom`,
+        border-bottom
+        lg:border-none`,
         className && className,
         isVisible ? "flex" : "hidden"
       )}>
       <p
         className="
           mx-3
-          my-2 
+          my-3 
           font-semibold 
         text-neutral-800
           text-xs

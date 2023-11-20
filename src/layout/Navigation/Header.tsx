@@ -5,7 +5,7 @@ import Button from "@/components/Button";
 
 const Header: FC = () => {
   return (
-    <header className="flex justify-between items-center pr-4 h-24 shadow-bottom">
+    <header className="flex justify-between items-center pr-4 h-24 border-bottom">
       <Image
         src="/Logo.svg"
         alt="logo"
