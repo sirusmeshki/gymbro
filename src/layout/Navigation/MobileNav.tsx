@@ -5,7 +5,7 @@ import Tip from "./Tip";
 
 const MobileNav: FC = () => {
   return (
-    <section className="flex flex-col">
+    <section className="flex flex-col border-left">
       <Tip className="max-h-12" />
       <Header />
       <Buttons className="fixed bottom-0" />

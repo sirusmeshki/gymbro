@@ -2,8 +2,8 @@ import NumberInput from "@/components/Input/NumberInput";
 import { SetsAndRepsProps } from "./models";
 
 const SetsAndReps: React.FC<SetsAndRepsProps> = ({ SARs, setSARs }) => {
-  const sets = SARs.single.sets;
-  const reps = SARs.single.reps;
+  const sets = SARs?.single?.sets;
+  const reps = SARs?.single?.reps;
 
   return (
     <div className="flex items-center justify-between w-full h-20 border-top shrink-0">
@@ -11,7 +11,7 @@ const SetsAndReps: React.FC<SetsAndRepsProps> = ({ SARs, setSARs }) => {
       <div className="flex items-center justify-center h-full">
         <NumberInput
           title="تکرار"
-          value={reps}
+          value={reps ? reps : 0}
           setValue={(e) =>
             setSARs?.({ ...SARs, single: { sets, reps: e.target.value } })
           }
@@ -22,7 +22,7 @@ const SetsAndReps: React.FC<SetsAndRepsProps> = ({ SARs, setSARs }) => {
         </span>
         <NumberInput
           title="ست"
-          value={sets}
+          value={sets ? sets : 0}
           setValue={(e) =>
             setSARs?.({ ...SARs, single: { sets: e.target.value, reps } })
           }

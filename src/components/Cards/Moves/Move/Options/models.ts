@@ -62,6 +62,6 @@ export type WorkoutProps = {
   image_url: string | null | undefined | StaticImport;
   rest: RestProps;
   SARs: SARsProps;
-  superset: string | null;
+  superset?: string | null;
   setIsOptionsOpen?: React.Dispatch<React.SetStateAction<boolean>> | undefined;
 };

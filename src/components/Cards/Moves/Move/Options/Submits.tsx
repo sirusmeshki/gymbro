@@ -14,7 +14,10 @@ const Submits: FC<WorkoutProps> = ({
   SARs,
   setIsOptionsOpen,
 }) => {
-  const [workouts, setWorkouts] = useLocalStorage("workouts", []);
+  const [workouts, setWorkouts] = useLocalStorage<WorkoutProps[]>(
+    "workouts",
+    []
+  );
 
   const [supersets, setSupersets] = useState([
     {
