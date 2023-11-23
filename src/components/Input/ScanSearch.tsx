@@ -2,22 +2,25 @@
 
 import Image from "next/image";
 import clsx from "clsx";
+import { useState } from "react";
 
 import { useSearchParams, usePathname, useRouter } from "next/navigation";
 
 import { useDebouncedCallback } from "use-debounce";
 
-export default function Search({ placeholder }: { placeholder: string }) {
+export default function ScanSearch({ placeholder }: { placeholder: string }) {
   const searchParams = useSearchParams();
   const pathname = usePathname();
   const { replace } = useRouter();
 
+  const [value, setValue] = useState("");
+
   const handleSearch = useDebouncedCallback((term) => {
     const params = new URLSearchParams(searchParams);
     if (term) {
-      params.set("move", term);
+      params.set("plan", term);
     } else {
-      params.delete("move");
+      params.delete("plan");
     }
     replace(`${pathname}?${params.toString()}`);
   }, 500);
@@ -31,7 +34,7 @@ export default function Search({ placeholder }: { placeholder: string }) {
         type="search"
         placeholder={placeholder}
         className="w-full h-full pr-4 text-base font-medium focus:outline-0 placeholder:text-sm placeholder:text-neutral-700"
-        defaultValue={searchParams.get("move")?.toString()}
+        defaultValue={searchParams.get("plan")?.toString()}
         onChange={(e) => {
           handleSearch(e.target.value);
         }}
