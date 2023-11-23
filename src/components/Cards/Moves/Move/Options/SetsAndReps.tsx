@@ -11,7 +11,7 @@ const SetsAndReps: React.FC<SetsAndRepsProps> = ({ SARs, setSARs }) => {
       <div className="flex items-center justify-center h-full">
         <NumberInput
           title="تکرار"
-          value={reps ? reps : 0}
+          value={reps ? reps : ""}
           setValue={(e) =>
             setSARs?.({ ...SARs, single: { sets, reps: e.target.value } })
           }
@@ -22,7 +22,7 @@ const SetsAndReps: React.FC<SetsAndRepsProps> = ({ SARs, setSARs }) => {
         </span>
         <NumberInput
           title="ست"
-          value={sets ? sets : 0}
+          value={sets ? sets : ""}
           setValue={(e) =>
             setSARs?.({ ...SARs, single: { sets: e.target.value, reps } })
           }

@@ -13,13 +13,13 @@ const Options: FC<MoveProps> = ({
   image_url,
   setIsOptionsOpen,
 }) => {
-  const [min, setMin] = useState(0);
-  const [sec, setSec] = useState(0);
+  const [min, setMin] = useState("");
+  const [sec, setSec] = useState("");
 
   // SET_AND_REPS
   const [SARs, setSARs] = useState<SARsProps>({
     custom: [],
-    single: { sets: 1, reps: 0 },
+    single: { sets: "", reps: "" },
   });
 
   return (

@@ -9,7 +9,7 @@ const Rest: React.FC<RestProps> = ({ sec, min, setSec, setMin }) => {
       <div className="flex items-center justify-center h-full">
         <NumberInput
           title="ثانیه"
-          value={sec}
+          value={sec ? sec : ""}
           setValue={(e) => setSec?.(e.target.value)}
           placeholder="0"
         />
@@ -18,7 +18,7 @@ const Rest: React.FC<RestProps> = ({ sec, min, setSec, setMin }) => {
         </span>
         <NumberInput
           title="دقیقه"
-          value={min}
+          value={min ? min : ""}
           setValue={(e) => setMin?.(e.target.value)}
           placeholder="0"
         />

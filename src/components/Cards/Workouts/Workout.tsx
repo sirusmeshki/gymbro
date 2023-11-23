@@ -31,7 +31,6 @@ const Workout: FC<WorkoutProps> = ({
       color: "bg-teal-100",
     },
   ]);
-
   const selectedSuperset = supersets.find((row) => row.name === superset);
 
   return (

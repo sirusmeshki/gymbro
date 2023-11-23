@@ -25,8 +25,8 @@ export type CustomProps = {
 };
 
 export type SingleProps = {
-  sets: number;
-  reps: number;
+  sets: string;
+  reps: string;
 };
 
 // Custom
@@ -40,10 +40,10 @@ export type SingleProps = {
 // { set: 1, reps: 8 }
 
 export type RestProps = {
-  min: number;
-  sec: number;
-  setMin?: React.Dispatch<React.SetStateAction<number>> | undefined;
-  setSec?: React.Dispatch<React.SetStateAction<number>> | undefined;
+  min: string;
+  sec: string;
+  setMin?: React.Dispatch<React.SetStateAction<string>> | undefined;
+  setSec?: React.Dispatch<React.SetStateAction<string>> | undefined;
 };
 
 export type SARsProps = {
@@ -59,9 +59,10 @@ export type SetsAndRepsProps = {
 export type WorkoutProps = {
   name: string;
   effective_muscle: string;
-  image_url: string | null | undefined | StaticImport;
+  image_url?: string | null | undefined | StaticImport;
   rest: RestProps;
   SARs: SARsProps;
-  superset?: string | null;
+  superset?: WorkoutProps[] | null;
   setIsOptionsOpen?: React.Dispatch<React.SetStateAction<boolean>> | undefined;
+  isEditing?: boolean;
 };

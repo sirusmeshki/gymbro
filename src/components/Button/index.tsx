@@ -11,6 +11,7 @@ type ButtonProps = {
   href?: string;
   alt: string;
   placeholder?: any;
+  disabled?: boolean;
   iconWidth?: number;
   iconHeight?: number;
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
@@ -22,6 +23,7 @@ const Button: FC<ButtonProps> = ({
   icon,
   alt,
   placeholder,
+  disabled,
   iconWidth,
   iconHeight,
   onClick,
@@ -29,6 +31,7 @@ const Button: FC<ButtonProps> = ({
   return (
     <button
       onClick={onClick}
+      disabled={disabled}
       className={clsx(
         `
         relative
@@ -47,9 +50,10 @@ const Button: FC<ButtonProps> = ({
         cta && "w-full font-semibold text-xl bg-lightBlue",
         className && className
       )}>
-      <div
-        className={clsx(
-          `
+      {!disabled && (
+        <div
+          className={clsx(
+            `
           absolute
           flex
           items-center
@@ -66,10 +70,11 @@ const Button: FC<ButtonProps> = ({
           delay-75
           group-hover:translate-y-0
           `,
-          cta && "bg-white"
-        )}>
-        {placeholder}
-      </div>
+            cta && "bg-white"
+          )}>
+          {placeholder}
+        </div>
+      )}
 
       {icon && (
         <Image
@@ -82,7 +87,12 @@ const Button: FC<ButtonProps> = ({
       )}
 
       {cta && (
-        <div className="flex items-center justify-center w-full h-full text-sm font-extrabold">
+        // <div className={clsx(`flex items-center justify-center w-full h-full text-sm font-extrabold ${}`}>
+        <div
+          className={clsx(
+            "flex items-center justify-center w-full h-full text-sm font-extrabold",
+            disabled && "opacity-20 bg-gray-200"
+          )}>
           {cta}
         </div>
       )}

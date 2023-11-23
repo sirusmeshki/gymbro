@@ -1,8 +1,8 @@
-import { FC } from "react";
+import { FC, InputHTMLAttributes } from "react";
 
 type NumberInputProps = {
-  title: string;
-  value: number;
+  title?: string;
+  value: string;
   setValue: React.Dispatch<React.SetStateAction<any>>;
   placeholder: string;
 };
@@ -14,16 +14,19 @@ const NumberInput: FC<NumberInputProps> = ({
   placeholder,
 }) => {
   return (
-    <label className="flex flex-col justify-center w-12 h-full border-right">
+    <label className="flex flex-col items-center justify-center w-12 h-full border-right">
       <input
-        className="text-xs text-center h-3/5 border-bottom focus:outline-none"
+        className="w-8 text-xs text-center transition rounded-none h-3/5 focus:outline-none focus:border-right focus:border-left focus:border-black focus:bg-lightGreen"
         value={value}
         placeholder={placeholder}
         onChange={(e) => setValue(e)}
+        type="number"
       />
-      <p className="flex items-center justify-center text-sm font-light h-2/5">
-        {title}
-      </p>
+      {title && (
+        <p className="flex items-center justify-center w-full text-sm font-light h-2/5 border-top">
+          {title}
+        </p>
+      )}
     </label>
   );
 };
