@@ -79,13 +79,13 @@ const Workout: FC<WorkoutProps> = ({
           {/* Rest */}
           {rest && (
             <div className="flex gap-2">
-              {rest.min === "" && (
+              {rest.min !== "" && (
                 <p className="flex justify-center items-center gap-1 font-bold">
                   {rest.min}
                   <span className="text-xs font-medium">دقیقه</span>
                 </p>
               )}
-              {rest.sec === "" && (
+              {rest.sec !== "" && (
                 <p className="flex justify-center items-center gap-1 font-bold">
                   {rest.sec}
                   <span className="text-xs font-medium">ثانیه</span>
