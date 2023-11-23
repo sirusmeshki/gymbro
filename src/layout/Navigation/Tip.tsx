@@ -19,7 +19,6 @@ const Tip = ({ className }: { className?: string }) => {
         overflow-hidden
         group
         border-bottom
-        border-top
         lg:border-b-0`,
         className && className,
         isVisible ? "flex" : "hidden"

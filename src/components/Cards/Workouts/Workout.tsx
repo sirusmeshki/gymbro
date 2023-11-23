@@ -31,11 +31,12 @@ const Workout: FC<WorkoutProps> = ({
       color: "bg-teal-100",
     },
   ]);
-  const selectedSuperset = supersets.find((row) => row.name === superset);
+
+  // const selectedSuperset = supersets?.find((row) => row.name === superset);
+  // ${selectedSuperset?.color}
 
   return (
-    <li
-      className={`flex items-center justify-center h-24 border-bottom ${selectedSuperset?.color}`}>
+    <li className={`flex items-center justify-center h-24 border-bottom`}>
       <div className="h-full p-1 aspect-square">
         <Image
           className="object-contain w-full h-full"
@@ -78,13 +79,13 @@ const Workout: FC<WorkoutProps> = ({
           {/* Rest */}
           {rest && (
             <div className="flex gap-2">
-              {rest.min > 0 && (
+              {rest.min === "" && (
                 <p className="flex justify-center items-center gap-1 font-bold">
                   {rest.min}
                   <span className="text-xs font-medium">دقیقه</span>
                 </p>
               )}
-              {rest.sec > 1 && (
+              {rest.sec === "" && (
                 <p className="flex justify-center items-center gap-1 font-bold">
                   {rest.sec}
                   <span className="text-xs font-medium">ثانیه</span>

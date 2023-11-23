@@ -58,15 +58,6 @@ const Submits: FC<WorkoutProps> = ({
       onErrorToast();
       setIsOptionsOpen?.(false);
     }
-
-    // if (!isAlreadyAdded && isSetsEmpty && isRepsEmpty) {
-    //   setWorkouts([...workouts, workout]);
-    //   onSuccessToast();
-    // } else {
-    //   onErrorToast();
-    // }
-
-    // setIsOptionsOpen?.(false);
   };
 
   const [supersets, setSupersets] = useState([
@@ -78,13 +69,14 @@ const Submits: FC<WorkoutProps> = ({
   //Superset modal
   const [isSuperset, setIsSuperset] = useState(false);
 
-  // const handleAddSuperset = (superset: string) => {
-  //   const workout = {
-  //     superset: [{ name, effective_muscle, image_url, rest, SARs, superset }],
-  //   };
-  //   setWorkouts([...workouts, workout]);
-  //   setIsOptionsOpen?.(false);
-  // };
+  const handleAddSuperset = (superset: string) => {
+    console.log("in progress");
+    // const workout = {
+    //   superset: [{ name, effective_muscle, image_url, rest, SARs, superset }],
+    // };
+    // setWorkouts([...workouts, workout]);
+    setIsOptionsOpen?.(false);
+  };
 
   return (
     <div className="flex h-[65px] shrink-0 border-top">
@@ -111,14 +103,14 @@ const Submits: FC<WorkoutProps> = ({
               onClick={() => setIsSuperset((prev) => !prev)}>
               لغو
             </li>
-            {/* {supersets.map((superset, index) => (
+            {supersets.map((superset, index) => (
               <li
                 key={index}
                 onClick={() => handleAddSuperset(superset.name)}
                 className={`font-semibold text-sm p-1 border-bottom w-full text-center ${superset.hoverColor} cursor-pointer`}>
                 {superset.name}
               </li>
-            ))} */}
+            ))}
           </ul>
         )}
       </div>

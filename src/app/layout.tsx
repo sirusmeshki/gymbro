@@ -1,5 +1,5 @@
 import "./globals.css";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 
 import Navigation from "@/layout/Navigation";
@@ -18,7 +18,10 @@ const Dana = localFont({
 export const metadata: Metadata = {
   title: "GymBro | جیم برو",
   description: "پلتفرم ساخت برنامه ورزشی",
-  themeColor: "#000000",
+};
+
+export const viewport: Viewport = {
+  themeColor: "#C9E4DE",
 };
 
 export default function RootLayout({

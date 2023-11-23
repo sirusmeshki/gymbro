@@ -68,12 +68,12 @@ const Selectbox: FC = () => {
       <div
         className={clsx(
           isBoxOpen ? "flex" : " hidden",
-          "absolute w-full flex-col top-24 h-fit border-bottom 2xl:border-r-0 border-left bg-white "
+          "absolute w-full flex-col mt-[1px] h-fit border-bottom lg:border-right 2xl:border-r-0 bg-white "
         )}>
         {/* Clear Filter Button */}
         <span
           className={clsx(
-            selectedMuscle ? "bg-red-200" : "opacity-20",
+            selectedMuscle ? "bg-red-400" : "opacity-20",
             "px-2 py-6 font-extrabold  cursor-pointer text-center"
           )}
           onClick={() => handleRemoveFilter()}>
