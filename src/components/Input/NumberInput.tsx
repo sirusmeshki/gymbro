@@ -1,4 +1,4 @@
-import { FC, InputHTMLAttributes } from "react";
+import { FC } from "react";
 
 type NumberInputProps = {
   title?: string;

@@ -1,22 +1,33 @@
 "use client";
 
-import { useReadLocalStorage } from "usehooks-ts";
+import { Metadata } from "next";
 
-import { WorkoutProps } from "@/components/Cards/Moves/Move/Options/models";
+export const metadata: Metadata = {
+  title: "GymBro | تنظیمات نهایی - جیم برو",
+  description: "تنظیمات نهایی برنامه",
+};
+
 import PlanSettingsSidebar from "@/layout/Sidebars/PlanSettingsSidebar";
 
-const Page = () => {
-  const workouts = useReadLocalStorage<WorkoutProps[]>("workouts");
+import Header from "@/components/Cards/Workouts/Settings/Header";
+import PersonalInfo from "@/components/Cards/Workouts/Settings/PersonalInfo";
+import PlanWorkouts from "@/components/Cards/Workouts/PlanWorkouts";
+import Footer from "@/components/Cards/Workouts/Settings/Footer";
 
+const PlanPage = () => {
   return (
     <section className="relative flex w-full h-full layout-padding">
-      {/* <div className="w-[480px] bg-red-500 lg:h-[calc(100dvh-44px)]"></div> */}
       <PlanSettingsSidebar />
-      <div className="flex flex-col w-full h-full overflow-y-scroll bg-red-500 lg:mr-[480px]">
-        Hey
+      <div className="flex justify-center w-full h-full overflow-y-auto lg:mr-[480px] p-2">
+        <main className="w-[595px] mt-4 mx-2 bg-white h-fit border border-black p-4 gap-6 flex flex-col">
+          <Header />
+          <PersonalInfo />
+          <PlanWorkouts />
+          <Footer />
+        </main>
       </div>
     </section>
   );
 };
 
-export default Page;
+export default PlanPage;

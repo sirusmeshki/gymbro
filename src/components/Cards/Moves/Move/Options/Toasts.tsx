@@ -12,3 +12,6 @@ export const onSetsEmptyToast = () =>
 
 export const onRepsEmptyToast = () =>
   toast.warning("مقدار تکرار نمیتواند خالی باشد.", { icon: false });
+
+export const onProgressToast = () =>
+  toast.error("قابلیت در حال توسعه است.", { icon: false });

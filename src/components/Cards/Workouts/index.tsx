@@ -14,7 +14,7 @@ const Workouts = ({ isEditing }: { isEditing: boolean }) => {
   }, []);
 
   return (
-    <ul className="flex flex-col w-full h-full overflow-y-scroll bg-white">
+    <ul className="flex flex-col w-full h-full border-left lg:border-none overflow-y-auto bg-white">
       {isClient &&
         workouts?.map(
           (workout: WorkoutProps, index) =>

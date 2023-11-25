@@ -1,6 +1,7 @@
 import { FC } from "react";
 
 import Image from "next/image";
+import Link from "next/link";
 import Button from "@/components/Button";
 
 const Header: FC = () => {
@@ -13,14 +14,15 @@ const Header: FC = () => {
         height={100}
         className="w-auto h-auto"
       />
-      <Button
-        className="max-w-[96px] h-full"
-        icon="/icon/menu.svg"
-        alt="menu icon"
-        iconHeight={32}
-        iconWidth={32}
-        placeholder="تمرینات"
-      />
+      <Link className="w-[96px] h-full border-right" href="/workout">
+        <Button
+          icon="/icon/menu.svg"
+          alt="menu icon"
+          iconHeight={32}
+          iconWidth={32}
+          placeholder="تمرینات"
+        />
+      </Link>
     </header>
   );
 };

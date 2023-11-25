@@ -8,7 +8,13 @@ import { useSearchParams, usePathname, useRouter } from "next/navigation";
 
 import { useDebouncedCallback } from "use-debounce";
 
-export default function ScanSearch({ placeholder }: { placeholder: string }) {
+export default function ScanSearch({
+  placeholder,
+  className,
+}: {
+  placeholder: string;
+  className?: string;
+}) {
   const searchParams = useSearchParams();
   const pathname = usePathname();
   const { replace } = useRouter();
@@ -28,7 +34,8 @@ export default function ScanSearch({ placeholder }: { placeholder: string }) {
   return (
     <label
       className={clsx(
-        "flex items-center border-bottom sm:border-b-0 justify-center w-full h-full gap-6 border-left"
+        "flex items-center border-bottom sm:border-b-0 justify-center w-full h-full gap-6 border-left",
+        className
       )}>
       <input
         type="search"

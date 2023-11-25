@@ -29,14 +29,16 @@ const ScanPage: FC = ({
         </p>
         <Image
           src="/images/character-4.svg"
-          className="w-fit shrink-0 "
+          className="shrink-1 w-full h-full"
           alt="women character"
           width={300}
           height={300}
         />
       </div>
-      <div className="flex flex-col w-full h-full overflow-y-auto">
-        <div className="flex items-end justify-center w-full h-full translate-y-[1px] sm:pt-4">
+
+      {/* content  */}
+      <div className="flex flex-col-reverse sm:flex-col w-full h-full overflow-y-auto">
+        <div className="flex flex-col justify-between items-center md:justify-between h-full w-full border-left overflow-y-auto gap-4">
           <Image
             className="px-4 pt-10"
             src="/images/example-plan.png"
@@ -45,10 +47,12 @@ const ScanPage: FC = ({
             alt="example plan"
           />
         </div>
-        <div className="flex flex-col w-full h-40 sm:flex-row shrink-0 border-top">
+        <div className="flex flex-col w-full h-auto sm:h-20 md:h-24 lg:h-28 xl:h-40 sm:flex-row shrink-0 sm:border-top">
           <ScanSearch placeholder="مثال: 2AB4" />
 
-          <Link className="w-full" href={`/scan/${planQuery}`}>
+          <Link
+            className="w-full h-40 sm:h-auto border-bottom sm:border-0"
+            href={`/scan/${planQuery}`}>
             <Button
               cta="پیداکن"
               placeholder={

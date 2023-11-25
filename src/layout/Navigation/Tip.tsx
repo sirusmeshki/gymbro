@@ -14,7 +14,7 @@ const Tip = ({ className }: { className?: string }) => {
         items-center 
         relative
         w-full
-        h-full
+        h-10
         bg-lightGreen 
         overflow-hidden
         group
@@ -23,7 +23,7 @@ const Tip = ({ className }: { className?: string }) => {
         className && className,
         isVisible ? "flex" : "hidden"
       )}>
-      <p className="mx-3 my-3 text-xs font-semibold text-center text-neutral-800 sm:text-sm">
+      <p className="mx-3 text-xs font-semibold text-center text-neutral-800 sm:text-sm">
         برای ذخیره برنامه ورزشی وارد حساب کاربری شوید
       </p>
     </div>

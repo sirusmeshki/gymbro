@@ -11,27 +11,29 @@ export default function Home() {
         layout-height
         flex
         w-full
-        border-bottom
       ">
-        <div className="w-full max-w-[480px] justify-center items-center hidden md:flex border-left">
+        <div className="w-full max-w-[480px] justify-center items-center hidden md:flex border-left py-20">
           <Image
             src="/images/character-1.svg"
-            className="w-fit mx-3"
+            className="shrink-1 w-full h-full"
             alt="men character"
-            width={100}
-            height={100}
+            width={240}
+            height={544}
           />
         </div>
-        <section className="flex flex-col gap-10 h-full w-full border-left pt-8 overflow-y-auto">
-          <div className="w-full h-full flex gap-4 flex-col px-2 justify-center items-center">
+        <section className="flex flex-col justify-between items-center md:justify-between h-full w-full border-left overflow-y-auto gap-4 ">
+          <div className="w-full h-fit max-h-52 flex justify-start items-start mt-10 md:hidden">
             <Image
               src="/images/character-3.svg"
-              className="w-fit mx-3 md:hidden mb-10"
+              className="shrink-1 w-full h-full"
               alt="men character"
-              width={100}
-              height={100}
+              width={406}
+              height={226}
             />
-            <h1 className="font-black text-center text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
+          </div>
+
+          <div className="flex flex-col items-center gap-4 md:m-auto px-4">
+            <h1 className="font-black text-center text-4xl sm:text-5xl md:text-6xl lg:text-7xl ">
               پلتفرم ساخت برنامه بدنسازی
             </h1>
             <p className="max-w-sm text-center font-light text-xs sm:text-sm md:text-base">
@@ -39,9 +41,10 @@ export default function Home() {
               های مختلف خروجی بگیر.
             </p>
           </div>
+
           <Link
             href="/moves"
-            className="w-full h-24 sm:h-32  md:h-40 border-top shrink-0">
+            className="w-full h-24 sm:h-32 md:h-40 border-top shrink-0">
             <Button
               cta="همین حالا بساز"
               placeholder={

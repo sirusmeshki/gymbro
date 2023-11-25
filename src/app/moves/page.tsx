@@ -5,9 +5,6 @@ import Search from "@/components/Input/Search";
 import Selectbox from "@/components/Input/Selectbox";
 import Moves from "@/components/Cards/Moves";
 
-import { ToastContainer, Slide } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-
 export const metadata: Metadata = {
   title: "GymBro | حرکات - جیم برو",
   description: "لیست تمامی حرکات بدنسازی",

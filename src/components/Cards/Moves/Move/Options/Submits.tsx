@@ -11,6 +11,7 @@ import {
   onSuccessToast,
   onSetsEmptyToast,
   onRepsEmptyToast,
+  onProgressToast,
 } from "./Toasts";
 
 const Submits: FC<WorkoutProps> = ({
@@ -70,7 +71,7 @@ const Submits: FC<WorkoutProps> = ({
   const [isSuperset, setIsSuperset] = useState(false);
 
   const handleAddSuperset = (superset: string) => {
-    console.log("in progress");
+    onProgressToast();
     // const workout = {
     //   superset: [{ name, effective_muscle, image_url, rest, SARs, superset }],
     // };

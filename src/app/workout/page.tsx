@@ -8,14 +8,14 @@ import Workouts from "@/components/Cards/Workouts";
 import Link from "next/link";
 import clsx from "clsx";
 
-const WorkoutSidebar = ({ className }: { className?: string }) => {
+const Page = () => {
   const [isEditing, setIsEditing] = useState(false);
 
   return (
-    <aside className="min-w-[480px] flex flex-col lg:h-[calc(100dvh-42px)] absolute translate-x-full lg:fixed lg:translate-x-0">
-      <header className="min-h-[96px] w-[calc(100vw - 10px)] border-left border-bottom flex justify-center items-center">
+    <aside className="bg-red-600 relative">
+      <header className="h-20 border-bottom flex justify-center items-center">
         {isEditing ? (
-          <div className="w-full h-full flex justify-center items-center">
+          <div className="flex items-center justify-center w-full h-full">
             <Button
               cta="لغو"
               className="bg-red-200"
@@ -47,40 +47,43 @@ const WorkoutSidebar = ({ className }: { className?: string }) => {
             />
           </div>
         ) : (
-          <Button
-            cta="ایجاد تغییرات"
-            className="bg-lightPurple"
-            // onClick={() => setIsEditing((prev) => !prev)}
-            placeholder={
-              <Image
-                src="/icon/arrow-left.svg"
-                alt="arrow left"
-                width={24}
-                height={24}
+          <div className="flex w-full h-full border-left">
+            <Link className="w-full h-full" href="/plan">
+              <Button
+                cta="ساخت برنامه"
+                className="h-full border-left"
+                disabled={isEditing}
+                placeholder={
+                  <Image
+                    src="/icon/arrow-left.svg"
+                    alt="arrow left"
+                    width={24}
+                    height={24}
+                  />
+                }
+                alt="submit workouts button"
               />
-            }
-            alt="edit workouts button"
-          />
+            </Link>
+            <Button
+              cta="ایجاد تغییرات"
+              className="bg-lightPurple flex-grow"
+              placeholder={
+                <Image
+                  src="/icon/arrow-left.svg"
+                  alt="arrow left"
+                  width={24}
+                  height={24}
+                />
+              }
+              alt="edit workouts button"
+            />
+          </div>
         )}
       </header>
+
       <Workouts isEditing={isEditing} />
-      <Link href="/plan" className="h-32 mb-44 border-top border-left">
-        <Button
-          cta="ساخت برنامه"
-          disabled={isEditing}
-          placeholder={
-            <Image
-              src="/icon/arrow-left.svg"
-              alt="arrow left"
-              width={24}
-              height={24}
-            />
-          }
-          alt="submit workouts button"
-        />
-      </Link>
     </aside>
   );
 };
 
-export default WorkoutSidebar;
+export default Page;
