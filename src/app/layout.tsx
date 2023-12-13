@@ -1,4 +1,5 @@
 import './globals.css'
+
 import type { Metadata, Viewport } from 'next'
 import localFont from 'next/font/local'
 
@@ -43,6 +44,7 @@ export default function RootLayout({
                     pauseOnHover
                     theme="light"
                     transition={Slide}
+                    icon={false}
                 />
                 <Navigation />
                 {children}
