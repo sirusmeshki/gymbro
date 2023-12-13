@@ -3,7 +3,7 @@ import { useIsClient, useReadLocalStorage } from 'usehooks-ts'
 import clsx from 'clsx'
 
 import Workout from '@/components/Cards/Workouts/Workout'
-import { WorkoutProps } from '@/components/Cards/Moves/Move/Options/models'
+import { WorkoutProps } from '@/components/Cards/Moves/Move/models'
 // import EditingWorkout from "./EditingWorkout";
 
 const Workouts = ({ isEditing }: { isEditing: boolean }) => {

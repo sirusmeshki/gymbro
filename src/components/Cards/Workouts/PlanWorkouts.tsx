@@ -1,7 +1,7 @@
 'use client'
 
 import { useIsClient, useReadLocalStorage } from 'usehooks-ts'
-import { WorkoutProps } from '@/components/Cards/Moves/Move/Options/models'
+import { WorkoutProps } from '@/components/Cards/Moves/Move/models'
 
 const PlanWorkouts = () => {
     const workouts = useReadLocalStorage<WorkoutProps[]>('workouts')

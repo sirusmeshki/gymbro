@@ -2,7 +2,7 @@ import { FC } from 'react'
 
 import Image from 'next/image'
 
-import { InfoProps } from './models'
+import { InfoProps } from '../models'
 
 const Info: FC<InfoProps> = ({ name, effective_muscle, image_url }) => {
     return (

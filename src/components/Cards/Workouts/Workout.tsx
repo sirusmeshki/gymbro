@@ -3,7 +3,7 @@ import { FC, useState } from 'react'
 import Button from '@/components/Button'
 import Image from 'next/image'
 
-import { WorkoutProps } from '../Moves/Move/Options/models'
+import { WorkoutProps } from '../Moves/Move/models'
 
 const Workout: FC<WorkoutProps> = ({
     name,

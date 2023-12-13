@@ -1,4 +1,4 @@
-import { RestProps } from './models'
+import { RestProps } from '../models'
 
 import NumberInput from '@/components/Input/NumberInput'
 

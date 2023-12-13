@@ -1,18 +1,19 @@
 import { FC, useState } from 'react'
 
 import Image from 'next/image'
+
 import { useLocalStorage } from 'usehooks-ts'
 
 import Button from '@/components/Button'
-import { SARsProps, WorkoutProps } from './models'
 
+import { SARsProps, WorkoutProps } from '../models'
 import {
     onErrorToast,
     onSuccessToast,
     onSetsEmptyToast,
     onRepsEmptyToast,
     onProgressToast,
-} from './Toasts'
+} from './toasts'
 
 const Submits: FC<WorkoutProps> = ({
     name,
