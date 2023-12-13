@@ -14,6 +14,7 @@ import {
     onRepsEmptyToast,
     onProgressToast,
 } from './toasts'
+import Selectbox from '@/components/Input/Selectbox'
 
 const Submits: FC<WorkoutProps> = ({
     name,
@@ -63,10 +64,10 @@ const Submits: FC<WorkoutProps> = ({
     }
 
     const [supersets] = useState([
-        { name: 'A', hoverColor: 'hover:bg-blue-100' },
-        { name: 'B', hoverColor: 'hover:bg-green-100' },
-        { name: 'C', hoverColor: 'hover:bg-purple-100' },
-        { name: 'D', hoverColor: 'hover:bg-teal-100' },
+        { value: 'A', hoverColor: 'hover:bg-blue-100' },
+        { value: 'B', hoverColor: 'hover:bg-green-100' },
+        { value: 'C', hoverColor: 'hover:bg-purple-100' },
+        { value: 'D', hoverColor: 'hover:bg-teal-100' },
     ])
     //Superset modal
     const [isSuperset, setIsSuperset] = useState(false)
@@ -82,40 +83,11 @@ const Submits: FC<WorkoutProps> = ({
 
     return (
         <div className="border-top flex h-[65px] shrink-0">
-            <div className="relative">
-                <Button
-                    cta="افزودن به سوپرست"
-                    className="border-left bg-white px-6"
-                    onClick={() => setIsSuperset((prev) => !prev)}
-                    placeholder={
-                        <Image
-                            src="/icon/arrow-left.svg"
-                            alt="arrow left"
-                            width={24}
-                            height={24}
-                        />
-                    }
-                    alt="cta button"
-                />
-
-                {isSuperset && (
-                    <ul className="border-left absolute right-0 top-0 flex w-full flex-col items-center justify-center bg-white">
-                        <li
-                            className="border-bottom w-full cursor-pointer py-2 text-center font-extrabold hover:bg-red-500"
-                            onClick={() => setIsSuperset((prev) => !prev)}>
-                            لغو
-                        </li>
-                        {supersets.map((superset, index) => (
-                            <li
-                                key={index}
-                                onClick={() => handleAddSuperset(superset.name)}
-                                className={`border-bottom w-full p-1 text-center text-sm font-semibold ${superset.hoverColor} cursor-pointer`}>
-                                {superset.name}
-                            </li>
-                        ))}
-                    </ul>
-                )}
-            </div>
+            <Selectbox
+                title="افزودن به سوپرست"
+                options={supersets}
+                onOptionClick={(e) => handleAddSuperset(e)}
+            />
 
             <Button
                 cta="افزودن"

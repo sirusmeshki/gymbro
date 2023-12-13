@@ -6,7 +6,7 @@ import Workout from '@/components/Cards/Workouts/Workout'
 import { WorkoutProps } from '@/components/Cards/Moves/Move/models'
 // import EditingWorkout from "./EditingWorkout";
 
-const Workouts = ({ isEditing }: { isEditing: boolean }) => {
+const Workouts = ({ isEditing }: { isEditing?: boolean }) => {
     const workouts = useReadLocalStorage<WorkoutProps[]>('workouts')
     const isClient = useIsClient()
 

@@ -2,8 +2,8 @@ import { Metadata } from 'next'
 
 import WorkoutSidebar from '@/layout/Sidebars/WorkoutSidebar'
 import Search from '@/components/Input/Search'
-import Selectbox from '@/components/Input/Selectbox'
 import Moves from '@/components/Cards/Moves'
+import Filter from '@/components/Input/Filter'
 
 export const metadata: Metadata = {
     title: 'GymBro | حرکات - جیم برو',
@@ -26,7 +26,7 @@ const MovesPage = ({
                     {/* Options */}
                     <div className="border-bottom z-20 flex h-32 w-full flex-col sm:h-20 sm:flex-row md:h-24">
                         <Search />
-                        <Selectbox />
+                        <Filter />
                     </div>
 
                     {/* Move List */}
