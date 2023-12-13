@@ -10,7 +10,7 @@ const Info: FC<InfoProps> = ({ name, effective_muscle, image_url }) => {
             <div className="aspect-square h-full p-1">
                 <Image
                     className="h-full w-full object-contain"
-                    src="/icon/arrow.svg"
+                    src={image_url ? image_url : '/icon/arrow.svg'}
                     alt={`${image_url} poster`}
                     width={100}
                     height={100}

@@ -28,7 +28,7 @@ const Workout: FC<WorkoutProps> = ({
             <div className="aspect-square h-full p-1">
                 <Image
                     className="h-full w-full object-contain"
-                    src={'/icon/arrow-left.svg'}
+                    src={image_url ? image_url : '/icon/arrow-left.svg'}
                     alt={`${image_url} poster`}
                     width={100}
                     height={100}

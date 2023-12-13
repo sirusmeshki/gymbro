@@ -18,7 +18,7 @@ const Card: FC<MoveProps> = ({
                 <div className="border-bottom aspect-square p-40">
                     <Image
                         className="h-fit w-full object-contain"
-                        src={'/icon/weight.svg'}
+                        src={image_url ? image_url : '/icon/weight.svg'}
                         alt={`عکس ${name}`}
                         width={10}
                         height={10}

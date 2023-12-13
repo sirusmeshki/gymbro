@@ -62,7 +62,7 @@ const Submits: FC<WorkoutProps> = ({
         }
     }
 
-    const [supersets, setSupersets] = useState([
+    const [supersets] = useState([
         { name: 'A', hoverColor: 'hover:bg-blue-100' },
         { name: 'B', hoverColor: 'hover:bg-green-100' },
         { name: 'C', hoverColor: 'hover:bg-purple-100' },
