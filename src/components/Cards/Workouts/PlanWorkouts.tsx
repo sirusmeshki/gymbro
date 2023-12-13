@@ -1,18 +1,11 @@
 'use client'
 
-import { useEffect, useState } from 'react'
-
-import { useReadLocalStorage } from 'usehooks-ts'
+import { useIsClient, useReadLocalStorage } from 'usehooks-ts'
 import { WorkoutProps } from '@/components/Cards/Moves/Move/Options/models'
 
 const PlanWorkouts = () => {
     const workouts = useReadLocalStorage<WorkoutProps[]>('workouts')
-
-    const [isClient, setIsClient] = useState(false)
-
-    useEffect(() => {
-        setIsClient(true)
-    }, [])
+    const isClient = useIsClient()
 
     return (
         <>

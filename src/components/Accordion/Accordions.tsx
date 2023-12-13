@@ -1,27 +1,20 @@
 'use client'
 
-import { useEffect, useState } from 'react'
-
 import Accordion from '@/components/Accordion/Accordion'
 import Option from '@/components/Accordion/Option'
 
 // List of accordions
 import { accordions } from './models'
+import { useIsClient } from 'usehooks-ts'
 
 const Accordions = () => {
-    const [isClient, setIsClient] = useState(false)
-
-    useEffect(() => {
-        setIsClient(true)
-    }, [])
+    const isClient = useIsClient()
 
     return (
         <>
             {isClient &&
                 accordions.map((accordion, index) => (
-                    <Accordion
-                        title={accordion.name}
-                        key={index}>
+                    <Accordion title={accordion.name} key={index}>
                         {accordion.options.map((option) => (
                             <Option
                                 key={option.query}

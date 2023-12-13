@@ -1,5 +1,4 @@
-import { useEffect, useState } from 'react'
-import { useReadLocalStorage } from 'usehooks-ts'
+import { useIsClient, useReadLocalStorage } from 'usehooks-ts'
 
 import clsx from 'clsx'
 
@@ -9,11 +8,7 @@ import { WorkoutProps } from '@/components/Cards/Moves/Move/Options/models'
 
 const Workouts = ({ isEditing }: { isEditing: boolean }) => {
     const workouts = useReadLocalStorage<WorkoutProps[]>('workouts')
-    const [isClient, setIsClient] = useState(false)
-
-    useEffect(() => {
-        setIsClient(true)
-    }, [])
+    const isClient = useIsClient()
 
     return (
         <>
@@ -25,7 +20,7 @@ const Workouts = ({ isEditing }: { isEditing: boolean }) => {
                     )}>
                     {/* When list is empty */}
                     {!workouts && (
-                        <li className='text-xs font-semibold'>
+                        <li className="text-xs font-semibold">
                             برای افزودن حرکت بر روی کارت ها کلیک کنید
                         </li>
                     )}
