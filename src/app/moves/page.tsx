@@ -1,39 +1,45 @@
-import { Metadata } from "next";
+import { Metadata } from 'next'
 
-import WorkoutSidebar from "@/layout/Sidebars/WorkoutSidebar";
-import Search from "@/components/Input/Search";
-import Selectbox from "@/components/Input/Selectbox";
-import Moves from "@/components/Cards/Moves";
+import WorkoutSidebar from '@/layout/Sidebars/WorkoutSidebar'
+import Search from '@/components/Input/Search'
+import Selectbox from '@/components/Input/Selectbox'
+import Moves from '@/components/Cards/Moves'
 
 export const metadata: Metadata = {
-  title: "GymBro | حرکات - جیم برو",
-  description: "لیست تمامی حرکات بدنسازی",
-};
+    title: 'GymBro | حرکات - جیم برو',
+    description: 'لیست تمامی حرکات بدنسازی',
+}
 
 const MovesPage = ({
-  searchParams,
+    searchParams,
 }: {
-  searchParams?: { move?: string; muscle?: string };
+    searchParams?: { move?: string; muscle?: string }
 }) => {
-  const moveQuery = searchParams?.move || "";
-  const muscleQuery = searchParams?.muscle || "";
+    const moveQuery = searchParams?.move || ''
+    const muscleQuery = searchParams?.muscle || ''
 
-  return (
-    <>
-      <section className="relative flex h-full layout-padding">
-        <WorkoutSidebar />
-        <div className="flex flex-col w-full lg:mr-[480px]">
-          <div className="z-20 flex flex-col w-full h-32 sm:flex-row sm:h-20 md:h-24 border-bottom">
-            <Search placeholder="نام حرکت را وارد کنید" />
-            <Selectbox />
-          </div>
-          <div className="grid w-full grid-cols-1 auto-rows-fr h-fit sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
-            <Moves moveQuery={moveQuery} muscleQuery={muscleQuery} />
-          </div>
-        </div>
-      </section>
-    </>
-  );
-};
+    return (
+        <>
+            <section className="layout-padding relative flex h-full">
+                <WorkoutSidebar />
+                <div className="flex w-full flex-col lg:mr-[480px]">
+                    {/* Options */}
+                    <div className="border-bottom z-20 flex h-32 w-full flex-col sm:h-20 sm:flex-row md:h-24">
+                        <Search />
+                        <Selectbox />
+                    </div>
 
-export default MovesPage;
+                    {/* Move List */}
+                    <div className="grid h-fit w-full auto-rows-fr grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
+                        <Moves
+                            moveQuery={moveQuery}
+                            muscleQuery={muscleQuery}
+                        />
+                    </div>
+                </div>
+            </section>
+        </>
+    )
+}
+
+export default MovesPage

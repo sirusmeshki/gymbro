@@ -44,7 +44,7 @@ const useMoves = async () => {
       { event: "*", schema: "public", table: "moves" },
       (payload) => {
         console.log("Change received!", payload);
-      }
+      },
     )
     .subscribe();
 

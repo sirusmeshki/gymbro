@@ -9,7 +9,7 @@ const Header = () => {
   let qrcode = searchParams.get("qr");
 
   return (
-    <header className="flex items-center justify-between w-full h-12">
+    <header className="flex h-12 w-full items-center justify-between">
       <Image src="/Logo.svg" alt="logo" width={60} height={16} />
       {code === "true" && <h3 className="text-lg font-black">#17BB</h3>}
       {qrcode === "true" && (

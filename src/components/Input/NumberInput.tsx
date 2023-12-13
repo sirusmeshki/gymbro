@@ -14,16 +14,16 @@ const NumberInput: FC<NumberInputProps> = ({
   placeholder,
 }) => {
   return (
-    <label className="flex flex-col items-center justify-center w-12 h-full border-right">
+    <label className="border-right flex h-full w-12 flex-col items-center justify-center">
       <input
-        className="w-8 text-xs text-center transition rounded-none h-3/5 focus:outline-none focus:border-right focus:border-left focus:border-black focus:bg-lightGreen"
+        className="focus:border-right focus:border-left h-3/5 w-8 rounded-none text-center text-xs transition focus:border-black focus:bg-lightGreen focus:outline-none"
         value={value}
         placeholder={placeholder}
         onChange={(e) => setValue(e)}
         type="number"
       />
       {title && (
-        <p className="flex items-center justify-center w-full text-sm font-light h-2/5 border-top">
+        <p className="border-top flex h-2/5 w-full items-center justify-center text-sm font-light">
           {title}
         </p>
       )}

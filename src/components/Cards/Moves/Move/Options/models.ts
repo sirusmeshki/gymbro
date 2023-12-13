@@ -1,33 +1,33 @@
-import { StaticImport } from "next/dist/shared/lib/get-img-props";
+import { StaticImport } from 'next/dist/shared/lib/get-img-props'
 
 export type MoveProps = {
-  id?: number;
-  name: string;
-  effective_muscle: string;
-  image_url?: string | null;
-  isOptionsOpen?: boolean;
-  setIsOptionsOpen?: React.Dispatch<React.SetStateAction<boolean>> | undefined;
-};
+    id?: number
+    name: string
+    effective_muscle: string
+    image_url?: string | null
+    isOptionsOpen?: boolean
+    setIsOptionsOpen?: React.Dispatch<React.SetStateAction<boolean>> | undefined
+}
 
 export type InfoProps = {
-  name: string;
-  effective_muscle: string;
-  image_url: string | null | undefined;
-};
+    name: string
+    effective_muscle: string
+    image_url: string | null | undefined
+}
 
 export type MovesProps = {
-  moves: MoveProps[] | null;
-};
+    moves: MoveProps[] | null
+}
 
 export type CustomProps = {
-  set: number;
-  reps: number;
-};
+    set: number
+    reps: number
+}
 
 export type SingleProps = {
-  sets: string;
-  reps: string;
-};
+    sets: string
+    reps: string
+}
 
 // Custom
 // [{ set: 1, reps: 8 },
@@ -40,29 +40,34 @@ export type SingleProps = {
 // { set: 1, reps: 8 }
 
 export type RestProps = {
-  min: string;
-  sec: string;
-  setMin?: React.Dispatch<React.SetStateAction<string>> | undefined;
-  setSec?: React.Dispatch<React.SetStateAction<string>> | undefined;
-};
+    min: string
+    sec: string
+    setMin?: React.Dispatch<React.SetStateAction<string>> | undefined
+    setSec?: React.Dispatch<React.SetStateAction<string>> | undefined
+}
 
 export type SARsProps = {
-  custom: CustomProps[] | null | undefined;
-  single: SingleProps | null | undefined;
-};
+    custom: CustomProps[] | null | undefined
+    single: SingleProps | null | undefined
+}
 
 export type SetsAndRepsProps = {
-  SARs: SARsProps;
-  setSARs: React.Dispatch<React.SetStateAction<any>> | undefined;
-};
+    SARs: SARsProps
+    setSARs: React.Dispatch<React.SetStateAction<any>> | undefined
+}
 
 export type WorkoutProps = {
-  name: string;
-  effective_muscle: string;
-  image_url?: string | null | undefined | StaticImport;
-  rest: RestProps;
-  SARs: SARsProps;
-  superset?: WorkoutProps[] | null;
-  setIsOptionsOpen?: React.Dispatch<React.SetStateAction<boolean>> | undefined;
-  isEditing?: boolean;
-};
+    name: string
+    effective_muscle: string
+    image_url?: string | null | undefined | StaticImport
+    rest: RestProps
+    SARs: SARsProps
+    superset?: WorkoutProps[] | null
+    setIsOptionsOpen?: React.Dispatch<React.SetStateAction<boolean>> | undefined
+    isEditing?: boolean
+}
+
+export type PlanProps = {
+    title: string
+    workouts: WorkoutProps[]
+}

@@ -9,21 +9,22 @@ const Tip = ({ className }: { className?: string }) => {
     <div
       className={clsx(
         `
-        flex
-        justify-center 
-        items-center 
-        relative
-        w-full
-        h-10
-        bg-lightGreen 
-        overflow-hidden
-        group
         border-bottom
+        group 
+        relative 
+        flex
+        h-10
+        w-full
+        items-center 
+        justify-center
+        overflow-hidden
+        bg-lightGreen
         lg:border-b-0`,
         className && className,
-        isVisible ? "flex" : "hidden"
-      )}>
-      <p className="mx-3 text-xs font-semibold text-center text-neutral-800 sm:text-sm">
+        isVisible ? "flex" : "hidden",
+      )}
+    >
+      <p className="mx-3 text-center text-xs font-semibold text-neutral-800 sm:text-sm">
         برای ذخیره برنامه ورزشی وارد حساب کاربری شوید
       </p>
     </div>

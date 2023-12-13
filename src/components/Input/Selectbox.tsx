@@ -1,102 +1,106 @@
-"use client";
+'use client'
 
-import { useState, FC } from "react";
-import Image from "next/image";
-import clsx from "clsx";
+import { useState, FC } from 'react'
 
-import { useSearchParams, usePathname, useRouter } from "next/navigation";
+import Image from 'next/image'
+import { useSearchParams, usePathname, useRouter } from 'next/navigation'
+
+import clsx from 'clsx'
 
 const Selectbox: FC = () => {
-  const [isBoxOpen, setIsBoxOpen] = useState(false);
+    const [isBoxOpen, setIsBoxOpen] = useState(false)
 
-  const searchParams = useSearchParams();
-  const pathname = usePathname();
-  const { replace } = useRouter();
-  const selectedMuscle = searchParams.get("muscle");
+    const searchParams = useSearchParams()
+    const pathname = usePathname()
+    const { replace } = useRouter()
+    const selectedMuscle = searchParams.get('muscle')
 
-  const handleSelect = (muscle: string) => {
-    const params = new URLSearchParams(searchParams);
-    if (muscle) {
-      params.set("muscle", muscle);
-    } else {
-      params.delete("muscle");
+    const handleSelect = (muscle: string) => {
+        const params = new URLSearchParams(searchParams)
+        if (muscle) {
+            params.set('muscle', muscle)
+        } else {
+            params.delete('muscle')
+        }
+        replace(`${pathname}?${params.toString()}`)
     }
-    replace(`${pathname}?${params.toString()}`);
-  };
 
-  const handleRemoveFilter = () => {
-    const params = new URLSearchParams(searchParams);
-    params.delete("muscle");
-    replace(`${pathname}?${params.toString()}`);
-  };
+    const handleRemoveFilter = () => {
+        const params = new URLSearchParams(searchParams)
+        params.delete('muscle')
+        replace(`${pathname}?${params.toString()}`)
+    }
 
-  const muscles = [
-    "سینه",
-    "پا",
-    "جلو بازو",
-    "پشت بازو",
-    "سرشانه",
-    "زیربغل",
-    "ساعد",
-    "کول",
-    "شکم",
-    "ساق پا",
-  ];
+    const muscles = [
+        'سینه',
+        'پا',
+        'جلو بازو',
+        'پشت بازو',
+        'سرشانه',
+        'زیربغل',
+        'ساعد',
+        'کول',
+        'شکم',
+        'ساق پا',
+    ]
 
-  return (
-    <div className="relative w-full h-full gap-6 border-left">
-      <div
-        onClick={() => setIsBoxOpen((prev) => !prev)}
-        className="z-40 flex items-center justify-between w-full h-full cursor-pointer">
-        <h6 className="mr-4 text-sm font-medium text-neutral-700">
-          <span>عضله</span>
-          <span>{selectedMuscle && `: ${selectedMuscle}`}</span>
-        </h6>
-        <Image
-          width="0"
-          height="0"
-          className={clsx(
-            isBoxOpen ? "rotate-180" : "",
-            "w-4 h-4 ml-4 transition-all"
-          )}
-          alt="search icon"
-          src="/icon/arrow.svg"
-        />
-      </div>
+    return (
+        <div className="border-right relative  h-full w-full  gap-6">
+            {/* Header */}
+            <div
+                onClick={() => setIsBoxOpen((prev) => !prev)}
+                className="z-50 flex h-full w-full cursor-pointer items-center justify-between">
+                <h6 className="mr-4 text-sm font-medium text-neutral-700">
+                    <span>عضله</span>
+                    <span>{selectedMuscle && `: ${selectedMuscle}`}</span>
+                </h6>
+                <Image
+                    width="0"
+                    height="0"
+                    className={clsx(
+                        isBoxOpen ? 'rotate-180' : '',
+                        'ml-4 h-4 w-4 transition-all'
+                    )}
+                    alt="search icon"
+                    src="/icon/arrow.svg"
+                />
+            </div>
 
-      {/* Select Values Modal */}
-      <div
-        className={clsx(
-          isBoxOpen ? "flex" : " hidden",
-          "absolute w-full flex-col mt-[1px] h-fit border-bottom lg:border-right 2xl:border-r-0 bg-white "
-        )}>
-        {/* Clear Filter Button */}
-        <span
-          className={clsx(
-            selectedMuscle ? "bg-red-400" : "opacity-20",
-            "px-2 py-6 font-extrabold  cursor-pointer text-center"
-          )}
-          onClick={() => handleRemoveFilter()}>
-          حذف فیلتر
-        </span>
-        <ul className="flex flex-wrap border-top gap-[1px] bg-borderColor">
-          {muscles.map((muscle, index) => (
-            <li
-              className={clsx(
-                selectedMuscle === muscle
-                  ? "text-neutral-800 bg-purple-100"
-                  : "text-neutral-500 bg-white",
-                "cursor-pointer px-8 py-4 grow justify-center flex items-center hover:bg-neutral-100"
-              )}
-              onClick={() => handleSelect(muscle)}
-              key={index}>
-              {muscle}
-            </li>
-          ))}
-        </ul>
-      </div>
-    </div>
-  );
-};
+            {/* Select values modal */}
+            <div
+                className={clsx(
+                    isBoxOpen ? 'flex' : 'hidden',
+                    'border-bottom absolute z-40 h-fit w-full flex-col bg-white 2xl:border-r-0'
+                )}>
+                {/* Clear filter button */}
+                <span
+                    className={clsx(
+                        selectedMuscle ? 'bg-red-400 ' : 'text-neutral-300',
+                        'border-top cursor-pointer px-2 py-6 text-center font-extrabold'
+                    )}
+                    onClick={() => handleRemoveFilter()}>
+                    حذف فیلتر
+                </span>
 
-export default Selectbox;
+                {/* List of muscles */}
+                <ul className="border-top grid grid-cols-2 gap-1 p-1 md:grid-cols-3 lg:grid-cols-4">
+                    {muscles.map((muscle, index) => (
+                        <li
+                            className={clsx(
+                                selectedMuscle === muscle
+                                    ? 'bg-lightGreen text-neutral-800'
+                                    : 'bg-white text-neutral-500',
+                                'cursor-pointer p-4 text-center text-sm hover:bg-neutral-100'
+                            )}
+                            onClick={() => handleSelect(muscle)}
+                            key={index}>
+                            {muscle}
+                        </li>
+                    ))}
+                </ul>
+            </div>
+        </div>
+    )
+}
+
+export default Selectbox

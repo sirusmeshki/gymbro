@@ -1,89 +1,91 @@
-"use client";
+'use client'
 
-import { useState } from "react";
-import Image from "next/image";
+import { useState } from 'react'
 
-import Button from "@/components/Button";
-import Workouts from "@/components/Cards/Workouts";
-import Link from "next/link";
-import clsx from "clsx";
+import Image from 'next/image'
+import Link from 'next/link'
+
+import Button from '@/components/Button'
+import Workouts from '@/components/Cards/Workouts'
 
 const Page = () => {
-  const [isEditing, setIsEditing] = useState(false);
+    const [isEditing, setIsEditing] = useState(false)
 
-  return (
-    <aside className="bg-red-600 relative">
-      <header className="h-20 border-bottom flex justify-center items-center">
-        {isEditing ? (
-          <div className="flex items-center justify-center w-full h-full">
-            <Button
-              cta="لغو"
-              className="bg-red-200"
-              onClick={() => setIsEditing((prev) => !prev)}
-              placeholder={
-                <Image
-                  src="/icon/arrow-left.svg"
-                  alt="arrow left"
-                  width={24}
-                  height={24}
-                />
-              }
-              alt="edit workouts button"
-            />
+    return (
+        <aside className='relative bg-red-600'>
+            <header className='border-bottom flex h-20 items-center justify-center'>
+                {isEditing ? (
+                    <div className='flex h-full w-full items-center justify-center'>
+                        <Button
+                            cta='لغو'
+                            className='bg-red-200'
+                            onClick={() => setIsEditing((prev) => !prev)}
+                            placeholder={
+                                <Image
+                                    src='/icon/arrow-left.svg'
+                                    alt='arrow left'
+                                    width={24}
+                                    height={24}
+                                />
+                            }
+                            alt='edit workouts button'
+                        />
 
-            <Button
-              cta="ذخیره"
-              className="bg-green-200"
-              onClick={() => setIsEditing((prev) => !prev)}
-              placeholder={
-                <Image
-                  src="/icon/arrow-left.svg"
-                  alt="arrow left"
-                  width={24}
-                  height={24}
-                />
-              }
-              alt="edit workouts button"
-            />
-          </div>
-        ) : (
-          <div className="flex w-full h-full border-left">
-            <Link className="w-full h-full" href="/plan">
-              <Button
-                cta="ساخت برنامه"
-                className="h-full border-left"
-                disabled={isEditing}
-                placeholder={
-                  <Image
-                    src="/icon/arrow-left.svg"
-                    alt="arrow left"
-                    width={24}
-                    height={24}
-                  />
-                }
-                alt="submit workouts button"
-              />
-            </Link>
-            <Button
-              cta="ایجاد تغییرات"
-              className="bg-lightPurple flex-grow"
-              placeholder={
-                <Image
-                  src="/icon/arrow-left.svg"
-                  alt="arrow left"
-                  width={24}
-                  height={24}
-                />
-              }
-              alt="edit workouts button"
-            />
-          </div>
-        )}
-      </header>
+                        <Button
+                            className='bg-green-200'
+                            cta='ذخیره'
+                            onClick={() => setIsEditing((prev) => !prev)}
+                            placeholder={
+                                <Image
+                                    src='/icon/arrow-left.svg'
+                                    alt='arrow left'
+                                    width={24}
+                                    height={24}
+                                />
+                            }
+                            alt='edit workouts button'
+                        />
+                    </div>
+                ) : (
+                    <div className='border-left flex h-full w-full'>
+                        <Link
+                            className='h-full w-full'
+                            href='/plan'>
+                            <Button
+                                cta='ساخت برنامه'
+                                className='border-left h-full'
+                                disabled={isEditing}
+                                placeholder={
+                                    <Image
+                                        src='/icon/arrow-left.svg'
+                                        alt='arrow left'
+                                        width={24}
+                                        height={24}
+                                    />
+                                }
+                                alt='submit workouts button'
+                            />
+                        </Link>
+                        <Button
+                            className='flex-grow bg-lightPurple'
+                            cta='ایجاد تغییرات'
+                            placeholder={
+                                <Image
+                                    src='/icon/arrow-left.svg'
+                                    alt='arrow left'
+                                    width={24}
+                                    height={24}
+                                />
+                            }
+                            alt='edit workouts button'
+                        />
+                    </div>
+                )}
+            </header>
 
-      <Workouts isEditing={isEditing} />
-    </aside>
-  );
-};
+            <Workouts isEditing={isEditing} />
+        </aside>
+    )
+}
 
-export default Page;
+export default Page

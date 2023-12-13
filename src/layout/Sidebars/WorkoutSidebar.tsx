@@ -2,20 +2,19 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 import Button from "@/components/Button";
 import Workouts from "@/components/Cards/Workouts";
-import Link from "next/link";
-import clsx from "clsx";
 
-const WorkoutSidebar = ({ className }: { className?: string }) => {
+const WorkoutSidebar = () => {
   const [isEditing, setIsEditing] = useState(false);
 
   return (
-    <aside className="min-w-[480px] flex flex-col lg:h-[calc(100dvh-42px)] absolute translate-x-full lg:fixed lg:translate-x-0">
-      <header className="min-h-[96px] w-[calc(100vw - 10px)] border-left border-bottom flex justify-center items-center">
+    <aside className="absolute flex min-w-[480px] translate-x-full flex-col lg:fixed lg:h-[calc(100dvh-42px)] lg:translate-x-0">
+      <header className="w-[calc(100vw - 10px)] border-bottom flex min-h-[96px] items-center justify-center">
         {isEditing ? (
-          <div className="w-full h-full flex justify-center items-center">
+          <div className="flex h-full w-full items-center justify-center">
             <Button
               cta="لغو"
               className="bg-red-200"
@@ -64,7 +63,7 @@ const WorkoutSidebar = ({ className }: { className?: string }) => {
         )}
       </header>
       <Workouts isEditing={isEditing} />
-      <Link href="/plan" className="h-32 mb-44 border-top border-left">
+      <Link href="/plan" className="border-top mb-44 h-32">
         <Button
           cta="ساخت برنامه"
           disabled={isEditing}

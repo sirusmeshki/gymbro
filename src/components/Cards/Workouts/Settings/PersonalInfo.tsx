@@ -15,7 +15,7 @@ const PersonalInfo = () => {
       {/* Personal Info */}
 
       {isAllValid && (
-        <ul className="flex items-center justify-between w-full">
+        <ul className="flex w-full items-center justify-between">
           {name && (
             <li className="text-xs font-semibold">
               نام: <span className="font-light">{name}</span>

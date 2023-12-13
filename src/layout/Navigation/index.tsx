@@ -15,7 +15,7 @@ const Navigation: FC = () => {
   }, []);
 
   return (
-    <nav className="w-full flex flex-col top-0 sticky bg-white z-40">
+    <nav className="sticky top-0 z-40 flex w-full flex-col bg-white">
       {isClient && !isDesktop ? <MobileNav /> : <DesktopNav />}
     </nav>
   );
