@@ -12,7 +12,6 @@ import { useDebouncedCallback } from 'use-debounce'
 type OptionProps = {
     title: string
     query: string
-    // type: "input" | "checkbox";
     isInput: boolean
     inputType?: string
     placeholder?: string
@@ -55,15 +54,15 @@ const Option: FC<OptionProps> = ({
     }
 
     return (
-        <div className='border-top flex h-14 items-center'>
-            <label className='min-w-[100px] pr-4 font-semibold text-neutral-600'>
+        <div className="border-top flex h-14 items-center">
+            <label className="min-w-[100px] pr-4 font-semibold text-neutral-600">
                 {title}:
             </label>
 
             {/* Text input */}
             {isInput && (
                 <input
-                    className='border-right h-full w-full pr-4  text-black placeholder:text-neutral-600 focus:border-black focus:bg-lightGreen focus:outline-none'
+                    className="border-right h-full w-full pr-4  text-black placeholder:text-neutral-600 focus:border-black focus:bg-lightGreen focus:outline-none"
                     type={inputType}
                     placeholder={placeholder}
                     defaultValue={searchParams.get(query)?.toString()}
@@ -86,8 +85,8 @@ const Option: FC<OptionProps> = ({
                             !isOptionSelected && 'hidden',
                             'group-hover:block'
                         )}
-                        src='/icon/tik.svg'
-                        alt='tik icon'
+                        src="/icon/tik.svg"
+                        alt="tik icon"
                         width={24}
                         height={24}
                     />

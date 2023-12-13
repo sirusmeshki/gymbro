@@ -48,7 +48,7 @@ const Button: FC<ButtonProps> = ({
 
             {icon && (
                 <Image
-                    className='aspect-square'
+                    className="aspect-square"
                     width={!iconWidth ? 24 : iconWidth}
                     height={!iconHeight ? 24 : iconHeight}
                     alt={alt}
@@ -57,7 +57,6 @@ const Button: FC<ButtonProps> = ({
             )}
 
             {cta && (
-                // <div className={clsx(`flex items-center justify-center w-full h-full text-sm font-extrabold ${}`}>
                 <div
                     className={clsx(
                         'flex h-full w-full items-center justify-center text-sm font-extrabold',
