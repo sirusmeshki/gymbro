@@ -7,13 +7,13 @@ const Card: FC<MoveProps> = ({
     name,
     effective_muscle,
     image_url,
-    setIsOptionsOpen,
+    onOpenOptions,
 }) => {
     return (
         <>
             <div
                 className="group h-full w-full cursor-pointer"
-                onClick={() => setIsOptionsOpen?.(true)}>
+                onClick={() => onOpenOptions?.()}>
                 {/* Move image */}
                 <div className="border-bottom aspect-square p-40">
                     <Image

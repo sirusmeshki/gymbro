@@ -7,13 +7,13 @@ import SetsAndReps from './SetsAndReps'
 import Submits from './Submits'
 import Info from './Info'
 
-import { MoveProps, SARsProps } from './models'
+import { MoveProps, SARsProps } from '../models'
 
 const Options: FC<MoveProps> = ({
     name,
     effective_muscle,
     image_url,
-    setIsOptionsOpen,
+    onCloseOptions,
 }) => {
     const [min, setMin] = useState('')
     const [sec, setSec] = useState('')
@@ -33,7 +33,7 @@ const Options: FC<MoveProps> = ({
                 iconHeight={18}
                 iconWidth={18}
                 placeholder="بستن"
-                onClick={() => setIsOptionsOpen?.(false)}
+                onClick={() => onCloseOptions?.()}
             />
             <Info
                 name={name}
@@ -48,7 +48,7 @@ const Options: FC<MoveProps> = ({
                 image_url={image_url}
                 SARs={SARs}
                 rest={{ min, sec }}
-                setIsOptionsOpen={setIsOptionsOpen}
+                setIsOptionsOpen={onCloseOptions}
             />
         </div>
     )
