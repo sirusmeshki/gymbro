@@ -1,5 +1,3 @@
-'use client'
-
 import Accordions from '@/components/Accordion/Accordions'
 import ExportAsPDF from '@/components/Export/ExportAsPDF'
 
