@@ -8,6 +8,7 @@ import { useSearchParams, usePathname, useRouter } from 'next/navigation'
 import clsx from 'clsx'
 
 import { useDebouncedCallback } from 'use-debounce'
+import { useLocalStorage } from 'usehooks-ts'
 
 type OptionProps = {
     title: string
@@ -29,13 +30,17 @@ const Option: FC<OptionProps> = ({
     const { replace } = useRouter()
 
     const [isOptionSelected, setIsOptionSelected] = useState(false)
+    const [userInfo, setUserInfo] = useLocalStorage(query, '')
+    const [option, setOption] = useLocalStorage(query, false)
 
     const handleChange = useDebouncedCallback((term) => {
         const params = new URLSearchParams(searchParams)
         if (term) {
             params.set(query, term)
+            setUserInfo(term)
         } else {
             params.delete(query)
+            setUserInfo('')
         }
         replace(`${pathname}?${params.toString()}`)
     }, 500)
@@ -46,8 +51,10 @@ const Option: FC<OptionProps> = ({
 
         if (!isOptionSelected) {
             params.set(query, 'true')
+            setOption(true)
         } else {
             params.delete(query)
+            setOption(false)
         }
 
         replace(`${pathname}?${params.toString()}`)
