@@ -25,7 +25,7 @@ const Accordion: FC<AccordionProps> = ({ title, children }) => {
                     {title}
                 </h5>
                 <Image
-                    className={clsx(isOpen && 'rotate-180')}
+                    className={clsx(isOpen && 'rotate-180', 'h-auto w-auto')}
                     width={24}
                     height={24}
                     src="/icon/arrow.svg"

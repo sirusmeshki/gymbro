@@ -1,6 +1,6 @@
 'use client'
 
-import { FC, useState } from 'react'
+import { FC } from 'react'
 
 import Image from 'next/image'
 import { useSearchParams, usePathname, useRouter } from 'next/navigation'
@@ -29,7 +29,8 @@ const Option: FC<OptionProps> = ({
     const pathname = usePathname()
     const { replace } = useRouter()
 
-    const [isOptionSelected, setIsOptionSelected] = useState(false)
+    const isSelected = searchParams.get(query)
+
     const [userInfo, setUserInfo] = useLocalStorage(query, '')
     const [option, setOption] = useLocalStorage(query, false)
 
@@ -46,10 +47,9 @@ const Option: FC<OptionProps> = ({
     }, 500)
 
     const handleCheckbox = () => {
-        setIsOptionSelected((prev) => !prev)
         const params = new URLSearchParams(searchParams)
 
-        if (!isOptionSelected) {
+        if (!isSelected) {
             params.set(query, 'true')
             setOption(true)
         } else {
@@ -83,14 +83,14 @@ const Option: FC<OptionProps> = ({
             {!isInput && (
                 <div
                     className={clsx(
-                        isOptionSelected && 'bg-lightGreen',
-                        'border-right group flex h-full w-full cursor-pointer justify-center hover:bg-neutral-100'
+                        isSelected && 'bg-lightGreen',
+                        'border-right group flex h-full w-full cursor-pointer items-center justify-center hover:bg-neutral-100'
                     )}
                     onClick={() => handleCheckbox()}>
                     <Image
                         className={clsx(
-                            !isOptionSelected && 'hidden',
-                            'group-hover:block'
+                            !isSelected && 'hidden',
+                            'h-6 w-6 group-hover:block'
                         )}
                         src="/icon/tik.svg"
                         alt="tik icon"

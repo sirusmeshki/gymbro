@@ -2,138 +2,132 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @layer components {
-  .layout-padding {
-    @apply pb-20 sm:pb-24 md:pb-32 lg:pb-0;
-  }
-  .layout-margin {
-    @apply mb-20 sm:mb-24 md:mb-32 lg:mb-0;
-  }
+    .layout-padding {
+        @apply pb-20 sm:pb-24 md:pb-32 lg:pb-0;
+    }
+    .layout-margin {
+        @apply mb-20 sm:mb-24 md:mb-32 lg:mb-0;
+    }
 
-  .layout-height {
-    @apply h-[calc(100dvh-216px)]
+    .layout-height {
+        @apply h-[calc(100dvh-216px)]
     sm:h-[calc(100dvh-232px)]
     md:h-[calc(100dvh-264px)]
     lg:h-[calc(100dvh-218px)];
-  }
+    }
 
-  .border-top {
-    @apply border-t border-t-borderColor;
-  }
-  .border-right {
-    @apply border-r border-r-borderColor;
-  }
-  .border-bottom {
-    @apply border-b border-b-borderColor;
-  }
-  .border-left {
-    @apply border-l border-l-borderColor;
-  }
+    .border-top {
+        @apply border-t border-t-borderColor;
+    }
+    .border-right {
+        @apply border-r border-r-borderColor;
+    }
+    .border-bottom {
+        @apply border-b border-b-borderColor;
+    }
+    .border-left {
+        @apply border-l border-l-borderColor;
+    }
 }
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
-* {
-  box-sizing: border-box !important;
-}
-
-:root {
-  direction: rtl;
+    direction: rtl;
 }
 
 body,
 html {
-  position: relative;
+    position: relative;
 }
 
 /* Persian Numeric Setup */
 body,
 input {
-  -moz-font-feature-settings: "ss02";
-  -webkit-font-feature-settings: "ss02";
-  font-feature-settings: "ss02";
+    -moz-font-feature-settings: 'ss02';
+    -webkit-font-feature-settings: 'ss02';
+    font-feature-settings: 'ss02';
 }
 
 li {
-  list-style-type: none;
+    list-style-type: none;
 }
 
 iframe {
-  /* height: calc(100dvh - 218px); */
-  height: 100dvh;
-  direction: rtl !important;
+    /* height: calc(100dvh - 218px); */
+    height: 100dvh;
+    direction: rtl !important;
 }
 
-
 /* width */
-::-webkit-scrollbar {
-  width: 10px;
+body::-webkit-scrollbar {
+    width: 10px;
+}
+
+.sidebar::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: white;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #e0e6ff;
 }
 
 /* Track */
-::-webkit-scrollbar-track {
-  background: white;
-  border-inline: 1px solid #000;
-  border-block: none;
+body::-webkit-scrollbar-track {
+    border-inline-end: 1px solid #000;
+}
+.sidebar::-webkit-scrollbar-track {
+    border-inline-start: 1px solid #000;
 }
 
 /* Handle */
-::-webkit-scrollbar-thumb {
-  background: #e0e6ff;
-  border-inline: 1px solid #000;
-  margin: 1px;
+body::-webkit-scrollbar-thumb {
+    border-inline-end: 1px solid #000;
+}
+.sidebar::-webkit-scrollbar-thumb {
+    border-inline-start: 1px solid #000;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #cccccc;
+    background: #cccccc;
 }
 
 @media screen and (max-width: 768px) {
-  ::-webkit-scrollbar {
-    width: 0px;
-    background: transparent; /* make scrollbar transparent */
-  }
+    body::-webkit-scrollbar,
+    .sidebar::-webkit-scrollbar {
+        width: 0px;
+        background: transparent; /* make scrollbar transparent */
+    }
 }
 
 @layer base {
-  input[type="number"]::-webkit-outer-spin-button,
-  input[type="number"]::-webkit-inner-spin-button,
-  input[type="number"] {
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: textfield !important;
-    margin: 0;
-  }
+    input[type='number']::-webkit-outer-spin-button,
+    input[type='number']::-webkit-inner-spin-button,
+    input[type='number'] {
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: textfield !important;
+        margin: 0;
+    }
 }
 
 .Toastify__toast {
-  margin-top: 0.625rem;
-  margin-inline: 0.375rem;
-  color: #000 !important;
-  background-color: white;
-  box-shadow: none !important;
-  border: 1px solid #000;
-  border-radius: 0 !important;
-  font-weight: bold;
-  font-size: 0.875rem;
+    margin-top: 0.625rem;
+    margin-inline: 0.375rem;
+    color: #000 !important;
+    background-color: white;
+    box-shadow: none !important;
+    border: 1px solid #000;
+    border-radius: 0 !important;
+    font-weight: bold;
+    font-size: 0.875rem;
 }
 
 @media screen and (max-width: 480px) {
-  .Toastify__toast {
-    font-size: 0.75rem;
-  }
+    .Toastify__toast {
+        font-size: 0.75rem;
+    }
 }
