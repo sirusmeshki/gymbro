@@ -72,8 +72,9 @@ li {
 }
 
 iframe {
-  height: calc(100dvh - 218px);
-  font-family: "DanaVF" !important;
+  /* height: calc(100dvh - 218px); */
+  height: 100dvh;
+  direction: rtl !important;
 }
 
 
