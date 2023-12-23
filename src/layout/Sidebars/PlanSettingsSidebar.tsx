@@ -7,11 +7,11 @@ const PlanSettingsSidebar = () => {
     return (
         <aside
             className="
-                border-left
+                sidebar
                 flex
                 w-full
                 flex-col
-                overflow-y-scroll
+                overflow-y-auto
                 lg:fixed
                 lg:h-[calc(100dvh-44px)]
                 lg:w-auto

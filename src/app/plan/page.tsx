@@ -16,7 +16,7 @@ const PlanPage = () => {
     return (
         <section className="layout-padding relative flex h-full w-full flex-col-reverse lg:flex-row">
             <PlanSettingsSidebar />
-            <div className="border-bottom flex h-full w-full justify-center overflow-y-auto p-2 lg:mr-[480px] lg:border-none">
+            <div className="border-bottom lg:border-right flex h-fit min-h-screen w-full justify-center overflow-y-auto bg-blue-50 p-2 lg:mr-[480px] lg:border-b-0">
                 <main className="mx-2 mt-4 flex h-fit w-[595px] flex-col gap-6 border border-black bg-white p-4">
                     <Header />
                     <PersonalInfo />

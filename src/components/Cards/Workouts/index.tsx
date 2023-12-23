@@ -15,7 +15,7 @@ const Workouts = ({ isEditing }: { isEditing?: boolean }) => {
             {isClient && (
                 <ul
                     className={clsx(
-                        'border-left flex h-full w-full flex-col overflow-y-auto bg-white lg:border-none',
+                        'sidebar border-left flex h-full w-full flex-col overflow-y-scroll bg-white lg:border-none',
                         !workouts && 'items-center justify-center'
                     )}>
                     {/* When list is empty */}
