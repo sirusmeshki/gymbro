@@ -15,7 +15,7 @@ const Header = () => {
             <Image style={tw('w-16')} src={'/logo.png'} />
 
             {code ? (
-                <Text style={tw('text-lg font-black')}>{`#${code}`}</Text>
+                <Text style={tw('text-lg font-black')}>{`#17BB`}</Text>
             ) : null}
             {qr ? <Image style={tw('w-[50] h-[50]')} src={'/qr.png'} /> : null}
         </View>

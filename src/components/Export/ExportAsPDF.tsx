@@ -11,7 +11,7 @@ const ExportAsPDF = () => {
     if (instance.error) return <div>Something went wrong: {instance.error}</div>
 
     return (
-        <a href={instance.url} download="test.pdf">
+        <a href={instance.url} download="gymbro.pdf">
             <Button
                 className="border-bottom max-h-24 min-h-[96px] w-full"
                 cta="اکسپورت PDF"

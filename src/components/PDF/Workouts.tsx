@@ -27,17 +27,17 @@ const Workouts = () => {
                         {workout.rest && (
                             <View style={tw('flex flex-row gap-2')}>
                                 {/* Second */}
-                                {workout.rest.sec && (
+                                {workout.rest.sec ? (
                                     <View style={tw('flex flex-row gap-1')}>
                                         <Text style={tw('text-xs')}>ثانیه</Text>
                                         <Text style={tw('font-bold text-sm')}>
                                             {workout.rest.sec}
                                         </Text>
                                     </View>
-                                )}
+                                ) : null}
 
                                 {/* Minute */}
-                                {workout.rest.min && (
+                                {workout.rest.min ? (
                                     <View style={tw('flex flex-row gap-1')}>
                                         <Text style={tw('text-xs ')}>
                                             دقیقه
@@ -46,7 +46,7 @@ const Workouts = () => {
                                             {workout.rest.min}
                                         </Text>
                                     </View>
-                                )}
+                                ) : null}
                             </View>
                         )}
 

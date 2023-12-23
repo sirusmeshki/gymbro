@@ -24,10 +24,10 @@ const MyDoc = () => {
     return (
         <Document>
             <Page size="A4" style={tw('flex flex-col gap-6 p-4 font-sans')}>
-                {/* <Header /> */}
-                {/* <PersonalInfo /> */}
-                {/* <Workouts /> */}
-                {/* <Footer /> */}
+                <Header />
+                <PersonalInfo />
+                <Workouts />
+                <Footer />
             </Page>
         </Document>
     )
