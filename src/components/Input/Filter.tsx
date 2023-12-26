@@ -19,6 +19,7 @@ const Filter: FC = () => {
         const params = new URLSearchParams(searchParams)
         if (muscle) {
             params.set('muscle', muscle)
+            setIsBoxOpen(false)
         } else {
             params.delete('muscle')
         }
