@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import Image from 'next/image'
 
-import { MoveProps } from './models'
+import { MoveProps } from '../../models'
 
 const Card: FC<MoveProps> = ({
     name,

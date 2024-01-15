@@ -47,10 +47,10 @@ const ScanPage: FC = ({
                         alt="example plan"
                     />
                 </div>
-                <div className="sm:border-top flex h-auto w-full shrink-0 flex-col sm:h-20 sm:flex-row md:h-24 lg:h-28 xl:h-40">
+                <div className="sm:border-top flex h-36 w-full shrink-0 flex-col sm:h-20 sm:flex-row md:h-24 lg:h-28 xl:h-40">
                     <ScanSearch />
                     <Link
-                        className="border-bottom h-40 w-full sm:h-auto sm:border-0"
+                        className="border-bottom sm:border-right h-40 w-full sm:h-auto sm:border-b-0"
                         href={`/scan/${planQuery}`}>
                         <Button
                             cta="پیداکن"

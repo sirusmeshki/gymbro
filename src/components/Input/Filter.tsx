@@ -30,6 +30,7 @@ const Filter: FC = () => {
         const params = new URLSearchParams(searchParams)
         params.delete('muscle')
         replace(`${pathname}?${params.toString()}`)
+        setIsBoxOpen(false)
     }
 
     const muscles = [
@@ -46,7 +47,7 @@ const Filter: FC = () => {
     ]
 
     return (
-        <div className="border-right relative  h-full w-full  gap-6">
+        <div className="sm:border-right relative  h-full w-full  gap-6">
             {/* Header */}
             <div
                 onClick={() => setIsBoxOpen((prev) => !prev)}

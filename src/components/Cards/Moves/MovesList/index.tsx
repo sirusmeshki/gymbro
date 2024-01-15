@@ -2,7 +2,7 @@ import { FC } from 'react'
 
 import Move from '../Move'
 
-import { MovesProps } from '../Move/models'
+import { MovesProps } from '../../models'
 
 const MovesList: FC<MovesProps> = ({ moves }) => {
     return (

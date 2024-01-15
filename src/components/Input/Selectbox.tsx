@@ -32,8 +32,8 @@ const Selectbox: FC<SelectboxProps> = ({
     return (
         <div className={clsx('relative', className)}>
             <Button
-                cta={title}
                 className="border-left bg-white px-6"
+                cta={title}
                 onClick={() => toggle()}
                 placeholder={
                     <Image

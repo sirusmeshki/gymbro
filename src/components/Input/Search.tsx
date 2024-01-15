@@ -22,7 +22,7 @@ export default function Search() {
     }, 500)
 
     return (
-        <label className="border-bottom border-right flex h-full w-full items-center justify-center gap-6 sm:border-b-0">
+        <label className="border-bottom md:border-right flex h-full w-full items-center justify-center gap-6 sm:border-b-0">
             <input
                 className="h-full w-full pr-4 text-base font-medium placeholder:text-sm placeholder:text-neutral-700 focus:outline-0"
                 type="search"

@@ -3,21 +3,9 @@ import ExportAsPDF from '@/components/Export/ExportAsPDF'
 
 const PlanSettingsSidebar = () => {
     return (
-        <aside
-            className="
-                sidebar
-                flex
-                w-full
-                flex-col
-                overflow-y-auto
-                lg:fixed
-                lg:h-[calc(100dvh-44px)]
-                lg:w-auto
-                lg:min-w-[480px]
-                lg:translate-x-0
-             ">
-            <Accordions />
+        <aside className="lg:border-left sidebar flex w-auto flex-col lg:h-[calc(100dvh-218px)] lg:min-w-[481px] lg:overflow-y-auto">
             <ExportAsPDF />
+            <Accordions />
         </aside>
     )
 }

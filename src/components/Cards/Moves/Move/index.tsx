@@ -7,13 +7,13 @@ import { useBoolean } from 'usehooks-ts'
 import Card from './Card'
 import Options from './Options'
 
-import { MoveProps } from './models'
+import { MoveProps } from '../../models'
 
 const Move: FC<MoveProps> = ({ name, effective_muscle, image_url }) => {
     const { value, setTrue, setFalse } = useBoolean(false)
 
     return (
-        <div className="border-bottom border-right flex flex-col bg-white">
+        <div className="border-bottom sm:border-right flex flex-col bg-white">
             {value ? (
                 <Options
                     name={name}

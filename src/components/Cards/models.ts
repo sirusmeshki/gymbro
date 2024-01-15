@@ -58,7 +58,7 @@ export type SetsAndRepsProps = {
 
 export type WorkoutProps = {
     name: string
-    effective_muscle: string
+    effective_muscle?: string
     image_url?: string | null | undefined | StaticImport
     rest: RestProps
     SARs: SARsProps
