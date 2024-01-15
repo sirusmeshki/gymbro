@@ -2,11 +2,11 @@ import { FC, useState } from 'react'
 
 import Image from 'next/image'
 
-import { useLocalStorage } from 'usehooks-ts'
+import { useLocalStorage, useReadLocalStorage } from 'usehooks-ts'
 
 import Button from '@/components/Button'
 
-import { SARsProps, WorkoutProps } from '../models'
+import { SARsProps, WorkoutProps } from '../../../models'
 import {
     onErrorToast,
     onSuccessToast,
@@ -29,6 +29,18 @@ const Submits: FC<WorkoutProps> = ({
         []
     )
 
+    const [plans, setPlans] = useLocalStorage('plan', [
+        { session: '1', workouts: [] },
+        { session: '2', workouts: [] },
+        { session: '3', workouts: [] },
+        { session: '4', workouts: [] },
+        { session: '5', workouts: [] },
+        { session: '6', workouts: [] },
+    ])
+
+    const activeSession = useReadLocalStorage('session')
+    const session = activeSession ? activeSession : '1'
+
     const handleAddMove = (name: string, SARs: SARsProps) => {
         let isSetsEmpty = SARs.single?.sets === ''
         let isRepsEmpty = SARs.single?.reps === ''
@@ -41,6 +53,22 @@ const Submits: FC<WorkoutProps> = ({
             SARs,
             superset: null,
         }
+
+        // const plan = {
+        //     session,
+        //     workouts: [
+        //         {
+        //             name,
+        //             effective_muscle,
+        //             image_url,
+        //             rest,
+        //             SARs,
+        //             superset: null,
+        //         },
+        //     ],
+        // }
+        // const selectedPlan = plans.find((plan) => plan.session === session)
+        // const workouts = selectedPlan?.workouts
 
         const isAlreadyAdded = workouts.find((workout) => workout.name === name)
 
@@ -69,9 +97,8 @@ const Submits: FC<WorkoutProps> = ({
         { value: 'C', hoverColor: 'hover:bg-purple-100' },
         { value: 'D', hoverColor: 'hover:bg-teal-100' },
     ])
-    //Superset modal
-    const [isSuperset, setIsSuperset] = useState(false)
 
+    //Superset modal
     const handleAddSuperset = (superset: string) => {
         onProgressToast()
         // const workout = {

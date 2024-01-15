@@ -3,7 +3,6 @@
 import { FC } from 'react'
 
 import Image from 'next/image'
-import { useSearchParams, usePathname, useRouter } from 'next/navigation'
 
 import clsx from 'clsx'
 
@@ -13,51 +12,33 @@ import { useLocalStorage } from 'usehooks-ts'
 type OptionProps = {
     title: string
     query: string
-    isInput: boolean
-    inputType?: string
+    type: 'text' | 'selectbox' | 'checkbox' | 'number'
+    options?: string[]
     placeholder?: string
 }
 
 const Option: FC<OptionProps> = ({
     title,
     query,
-    isInput,
+    type,
     placeholder,
-    inputType,
+    options,
 }) => {
-    const searchParams = useSearchParams()
-    const pathname = usePathname()
-    const { replace } = useRouter()
-
-    const isSelected = searchParams.get(query)
-
     const [userInfo, setUserInfo] = useLocalStorage(query, '')
-    const [option, setOption] = useLocalStorage(query, false)
+    const [isChecked, setOption] = useLocalStorage(query, false)
+    const [selected, setSelected] = useLocalStorage(query, '1')
 
     const handleChange = useDebouncedCallback((term) => {
-        const params = new URLSearchParams(searchParams)
-        if (term) {
-            params.set(query, term)
-            setUserInfo(term)
-        } else {
-            params.delete(query)
-            setUserInfo('')
-        }
-        replace(`${pathname}?${params.toString()}`)
+        return term ? setUserInfo(term) : setUserInfo('')
     }, 500)
 
     const handleCheckbox = () => {
-        const params = new URLSearchParams(searchParams)
+        return !isChecked ? setOption(true) : setOption(false)
+    }
 
-        if (!isSelected) {
-            params.set(query, 'true')
-            setOption(true)
-        } else {
-            params.delete(query)
-            setOption(false)
-        }
-
-        replace(`${pathname}?${params.toString()}`)
+    const handleSelectBox = (e: string) => {
+        let isSelected = e === selected
+        return !isSelected && setSelected(e)
     }
 
     return (
@@ -66,30 +47,61 @@ const Option: FC<OptionProps> = ({
                 {title}:
             </label>
 
+            {/* Selectbox */}
+            {type === 'selectbox' &&
+                options?.map((option, index) => (
+                    <div
+                        key={index}
+                        onClick={() => handleSelectBox(option)}
+                        className={clsx(
+                            'border-right flex h-full w-full cursor-pointer items-center justify-center',
+                            selected === option
+                                ? 'bg-lightGreen font-bold text-black'
+                                : 'bg-white'
+                        )}>
+                        {option}
+                    </div>
+                ))}
+
             {/* Text input */}
-            {isInput && (
+            {type === 'text' && (
                 <input
-                    className="border-right h-full w-full pr-4  text-black placeholder:text-neutral-600 focus:border-black focus:bg-lightGreen focus:outline-none"
-                    type={inputType}
+                    className="border-right h-full w-full pr-4 font-semibold text-black placeholder:font-light placeholder:text-neutral-500 focus:border-black focus:bg-lightGreen focus:outline-none"
+                    type="text"
                     placeholder={placeholder}
-                    defaultValue={searchParams.get(query)?.toString()}
+                    defaultValue={userInfo}
                     onChange={(e) => {
                         handleChange(e.target.value)
                     }}
                 />
             )}
 
+            {/* Number input */}
+            {type === 'number' && (
+                <input
+                    className="border-right h-full w-full pr-4 font-semibold text-black placeholder:font-light placeholder:text-neutral-500 focus:border-black focus:bg-lightGreen focus:outline-none"
+                    type="number"
+                    placeholder={placeholder}
+                    defaultValue={userInfo}
+                    onChange={(e) => {
+                        handleChange(e.target.value)
+                    }}
+                />
+            )}
+
+            {/* */}
+
             {/* Checkbox input */}
-            {!isInput && (
+            {type === 'checkbox' && (
                 <div
                     className={clsx(
-                        isSelected && 'bg-lightGreen',
+                        isChecked && 'bg-lightGreen',
                         'border-right group flex h-full w-full cursor-pointer items-center justify-center hover:bg-neutral-100'
                     )}
                     onClick={() => handleCheckbox()}>
                     <Image
                         className={clsx(
-                            !isSelected && 'hidden',
+                            !isChecked && 'hidden',
                             'h-6 w-6 group-hover:block'
                         )}
                         src="/icon/tik.svg"

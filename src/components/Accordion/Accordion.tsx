@@ -17,7 +17,7 @@ const Accordion: FC<AccordionProps> = ({ title, children }) => {
     const [isOpen, toggle] = useToggle()
 
     return (
-        <li className="border-bottom">
+        <li className="border-bottom bg-white">
             <header
                 className="flex cursor-pointer items-center justify-between gap-1 px-5 py-8"
                 onClick={() => toggle()}>

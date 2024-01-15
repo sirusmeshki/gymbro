@@ -20,8 +20,8 @@ const Accordions = () => {
                                 key={option.query}
                                 query={option.query}
                                 title={option.title}
-                                isInput={option.type}
-                                inputType={option.inputType}
+                                type={option.type}
+                                options={option.options}
                                 placeholder={option.placeholder}
                             />
                         ))}
