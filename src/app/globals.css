@@ -11,10 +11,10 @@
     }
 
     .layout-height {
-        @apply h-[calc(100dvh-216px)]
-    sm:h-[calc(100dvh-232px)]
-    md:h-[calc(100dvh-264px)]
-    lg:h-[calc(100dvh-218px)];
+        @apply h-[calc(100dvh-186px)]
+               sm:h-[calc(100dvh-216px)]
+               md:h-[calc(100dvh-248px)]
+               lg:h-[calc(100dvh-218px)];
     }
 
     .border-top {
@@ -130,4 +130,8 @@ body::-webkit-scrollbar-thumb {
     .Toastify__toast {
         font-size: 0.75rem;
     }
+}
+.workout-border-fix:last-child,
+.workout-border-fix:nth-last-child(2) {
+    border-bottom: none;
 }

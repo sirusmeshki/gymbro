@@ -1,84 +1,59 @@
-import { FC } from "react";
+import { FC } from 'react'
 
-import clsx from "clsx";
+import Link from 'next/link'
+import { useSelectedLayoutSegment } from 'next/navigation'
 
-import Button from "@/components/Button";
+import clsx from 'clsx'
 
-import Link from "next/link";
-import Image from "next/image";
-
-import { useSelectedLayoutSegment } from "next/navigation";
+import Button from '@/components/Button'
+import { buttons } from './utils'
 
 interface ButtonsProps {
-  className?: string;
+    className?: string
 }
 
 const Buttons: FC<ButtonsProps> = ({ className }) => {
-  const activeSegment = useSelectedLayoutSegment();
+    const activeSegment = useSelectedLayoutSegment()
 
-  const buttons = [
-    {
-      href: "/",
-      icon: "/icon/home.svg",
-      placeholder: "خانه",
-      activeSegment: null,
-    },
-    {
-      href: "/moves",
-      icon: "/icon/weight.svg",
-      placeholder: "حرکات",
-      activeSegment: "moves",
-    },
-    {
-      href: "/scan",
-      icon: "/icon/QRCode.svg",
-      placeholder: "اسکن",
-      activeSegment: "scan",
-    },
-    {
-      href: "/user",
-      icon: "/icon/user.svg",
-      placeholder: "حساب کاربری",
-      activeSegment: "user",
-    },
-  ];
+    return (
+        <ul
+            className={clsx(
+                `
+                border-top
+                flex
+                h-16
+                w-full
+                items-center
+                justify-center
+                bg-white
+                sm:h-24
+                md:h-32
+                lg:h-44
+                lg:border-none
+                `,
+                className && className
+            )}>
+            {buttons.map((button, index) => (
+                <li key={index} className="h-full w-full">
+                    <Link
+                        className={clsx(`h-full w-full lg:w-60`)}
+                        href={button.href}>
+                        <Button
+                            className={clsx(
+                                activeSegment === button.activeSegment
+                                    ? 'bg-lightBlue'
+                                    : '',
+                                'border-right'
+                            )}
+                            placeholder={button.placeholder}
+                            icon={button.icon}
+                            alt={button.href}
+                        />
+                    </Link>
+                </li>
+            ))}
+        </ul>
+    )
+}
 
-  return (
-    <ul
-      className={clsx(
-        `
-        border-top
-        flex
-        h-20
-        w-full
-        items-center
-        justify-center
-        bg-white
-        sm:h-24
-        md:h-32
-        lg:h-44
-        lg:border-none
-        `,
-        className && className,
-      )}
-    >
-      {buttons.map((button, index) => (
-        <li key={index} className="h-full w-full">
-          <Link className={clsx(`h-full w-full lg:w-60`)} href={button.href}>
-            <Button
-              className={clsx(
-                activeSegment === button.activeSegment ? "bg-lightBlue" : "",
-                "border-right",
-              )}
-              placeholder={button.placeholder}
-              icon={button.icon}
-              alt={button.href}
-            />
-          </Link>
-        </li>
-      ))}
-    </ul>
-  );
-};
-
-export default Buttons;
+export default Buttons
