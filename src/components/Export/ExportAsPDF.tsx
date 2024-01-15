@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 import Button from '../Button'
 
-import PDF from '@/app/_pdf/page'
+import PDF from '@/app/pdf/page'
 
 import { useIsClient } from 'usehooks-ts'
 import { PDFDownloadLink } from '@react-pdf/renderer'

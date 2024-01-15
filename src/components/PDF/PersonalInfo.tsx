@@ -1,7 +1,25 @@
 import { useReadLocalStorage } from 'usehooks-ts'
 
-import { Text, View } from '@react-pdf/renderer'
-import { tw } from './utils'
+import { StyleSheet, Text, View } from '@react-pdf/renderer'
+
+const styles = StyleSheet.create({
+    container: {
+        display: 'flex',
+        flexDirection: 'row-reverse',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        width: '100%',
+    },
+
+    title: {
+        fontWeight: 'semibold',
+        fontSize: '12pt',
+    },
+
+    subTitle: {
+        fontWeight: 'light',
+    },
+})
 
 const PersonalInfo = () => {
     const name = useReadLocalStorage('name')
@@ -13,17 +31,13 @@ const PersonalInfo = () => {
     return (
         <>
             {personalInfo ? (
-                <View
-                    style={tw(
-                        'flex flex-row-reverse w-full items-center justify-between'
-                    )}>
+                <View style={styles.container}>
                     {/* li */}
                     {/* User name */}
                     {name ? (
-                        <View style={tw('text-xs font-semibold')}>
+                        <View style={styles.title}>
                             <Text>
-                                <Text
-                                    style={tw('font-light')}>{`${name}`}</Text>
+                                <Text style={styles.subTitle}>{`${name}`}</Text>
                                 نام:
                             </Text>
                         </View>
@@ -31,12 +45,10 @@ const PersonalInfo = () => {
 
                     {/* User weight */}
                     {weight ? (
-                        <View style={tw('text-xs font-semibold')}>
+                        <View style={styles.title}>
                             <Text>
                                 <Text
-                                    style={tw(
-                                        'font-light'
-                                    )}>{`${weight}`}</Text>
+                                    style={styles.subTitle}>{`${weight}`}</Text>
                                 وزن:
                             </Text>
                         </View>
@@ -44,11 +56,10 @@ const PersonalInfo = () => {
 
                     {/* User height */}
                     {height ? (
-                        <View style={tw('text-xs font-semibold')}>
+                        <View style={styles.title}>
                             <Text>
-                                <Text style={tw('font-light')}>{`${
-                                    height ? height : ''
-                                }`}</Text>
+                                <Text
+                                    style={styles.subTitle}>{`${height}`}</Text>
                                 قد:
                             </Text>
                         </View>

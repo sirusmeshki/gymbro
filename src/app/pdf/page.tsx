@@ -1,8 +1,12 @@
 'use client'
 
-import { Document, Page, Font } from '@react-pdf/renderer'
-
-import { tw } from '@/components/PDF/utils'
+import {
+    Document,
+    Page,
+    Font,
+    PDFViewer,
+    StyleSheet,
+} from '@react-pdf/renderer'
 
 import Header from '@/components/PDF/Header'
 import PersonalInfo from '@/components/PDF/PersonalInfo'
@@ -20,16 +24,27 @@ Font.register({
     ],
 })
 
+const styles = StyleSheet.create({
+    page: {
+        fontFamily: 'DanaFaNum',
+        display: 'flex',
+        gap: '16pt',
+        padding: '10pt',
+    },
+})
+
 const MyDoc = () => {
     return (
+        // <PDFViewer>
         <Document>
-            <Page size="A4" style={tw('flex flex-col gap-6 p-4 font-sans')}>
+            <Page size="A4" style={styles.page}>
                 <Header />
                 <PersonalInfo />
                 <Workouts />
                 <Footer />
             </Page>
         </Document>
+        //  </PDFViewer>
     )
 }
 
