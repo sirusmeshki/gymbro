@@ -11,7 +11,7 @@
     }
 
     .layout-height {
-        @apply h-[calc(100dvh-186px)]
+        @apply h-[calc(100dvh-184px)]
                sm:h-[calc(100dvh-216px)]
                md:h-[calc(100dvh-248px)]
                lg:h-[calc(100dvh-218px)];
