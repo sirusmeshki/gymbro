@@ -14,7 +14,7 @@ const config: Config = {
             lg: '1200px',
             xl: '1440px',
             '2xl': '1760px',
-            '3xl': '1920px',
+            '3xl': '2000px',
         },
         extend: {
             transitionTimingFunction: {
@@ -23,9 +23,11 @@ const config: Config = {
             colors: {
                 lightGreen: '#C9E4DE',
                 lightPurple: '#E0E6FF',
-                lightBlue: '#CDE6FA',
-                borderColor: '#000',
-                // borderColor: "#f1f1f1",
+                // lightBlue: '#CDE6FA',
+                lightBlue: '#d6edff',
+                // borderColor: '#000',
+                // borderColor: '#f1f1f1',
+                borderColor: '#',
             },
             boxborder: {
                 //Borders

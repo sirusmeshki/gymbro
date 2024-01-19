@@ -34,7 +34,7 @@ const Workout: FC<WorkoutProps> = ({
                     height={100}
                 />
             </div>
-            <div className="flex h-full w-full flex-col p-2">
+            <div className="flex h-full w-full flex-col p-3">
                 {/* Move Info */}
                 <div className="flex h-full w-full flex-col">
                     <h4 className="text-base font-bold text-neutral-900">

@@ -21,7 +21,7 @@ export default function Home() {
                     {/* Small device, men character */}
                     <div className="mt-10 flex h-fit max-h-52 w-full items-start justify-start md:hidden">
                         <Image
-                            className="shrink-1 h-full w-full"
+                            className="shrink-1 h-full w-full p-4"
                             src="/images/character-3.svg"
                             alt="men character"
                             width={406}

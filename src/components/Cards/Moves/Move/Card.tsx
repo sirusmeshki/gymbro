@@ -25,7 +25,7 @@ const Card: FC<MoveProps> = ({
                     />
                 </div>
                 {/* Move info */}
-                <footer className="flex h-16 items-center justify-between gap-1 px-4 group-hover:bg-blue-100">
+                <footer className="flex h-16 items-center justify-between gap-1 px-4 group-hover:bg-lightPurple">
                     <h4 className="text-sm font-bold text-neutral-900 sm:text-sm">
                         {name}
                     </h4>

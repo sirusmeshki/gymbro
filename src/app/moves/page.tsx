@@ -30,7 +30,7 @@ const MovesPage = ({
                     </div>
 
                     {/* Move List */}
-                    <div className="grid h-fit w-full auto-rows-fr grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
+                    <div className="grid h-fit w-full auto-rows-fr grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 3xl:grid-cols-5">
                         <Moves
                             moveQuery={moveQuery}
                             muscleQuery={muscleQuery}
