@@ -15,9 +15,9 @@ const Header: FC = () => {
                 width={100}
                 height={100}
             />
-            <Link className="border-right h-full w-[80px]" href="/workout">
+            <Link className="h-full w-[80px]" href="/workout">
                 <Button
-                    className="border-l-0"
+                    className="border-0"
                     icon="/icon/menu.svg"
                     alt="menu icon"
                     iconHeight={32}
