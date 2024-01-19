@@ -40,7 +40,7 @@ const Fill = ({
                             flexWrap: 'wrap',
                         },
                     ]}>
-                    {workouts.map((workout, index) => (
+                    {workouts?.map((workout, index) => (
                         <Workout
                             key={index}
                             index={index}
@@ -59,7 +59,7 @@ const Fill = ({
                         design === '1' && 'flex flex-col',
                         design === '2' && 'grid grid-cols-2'
                     )}>
-                    {workouts.map((workout: WorkoutProps, index) => (
+                    {workouts?.map((workout: WorkoutProps, index) => (
                         <Workout
                             key={index}
                             index={index}
