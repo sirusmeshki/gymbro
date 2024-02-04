@@ -17,10 +17,14 @@ import Footer from '@/components/PDF/Footer'
 Font.register({
     family: 'DanaFaNum',
     fonts: [
-        { fontWeight: 300, src: '/fonts/DanaFaNum-Light.ttf' },
-        { fontWeight: 600, src: '/fonts/DanaFaNum-DemiBold.ttf' },
-        { fontWeight: 700, src: '/fonts/DanaFaNum-Bold.ttf' },
-        { fontWeight: 900, src: '/fonts/DanaFaNum-Black.ttf' },
+        { fontWeight: 300, src: '/font/DanaFaNum-Light.woff' },
+        { fontWeight: 600, src: '/font/DanaFaNum-DemiBold.woff' },
+        { fontWeight: 700, src: '/font/DanaFaNum-Bold.woff' },
+        { fontWeight: 900, src: '/font/DanaFaNum-Black.woff' },
+        { fontWeight: 300, src: '/font/DanaFaNum-Light.woff2' },
+        { fontWeight: 600, src: '/font/DanaFaNum-DemiBold.woff2' },
+        { fontWeight: 700, src: '/font/DanaFaNum-Bold.woff2' },
+        { fontWeight: 900, src: '/font/DanaFaNum-Black.woff2' },
     ],
 })
 
@@ -44,7 +48,7 @@ const MyDoc = () => {
                 <Footer />
             </Page>
         </Document>
-        //  </PDFViewer>
+        // </PDFViewer>
     )
 }
 

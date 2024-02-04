@@ -9,11 +9,7 @@ import { ToastContainer, Slide } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 
 const Dana = localFont({
-    src: [
-        { path: './font/DanaVF.ttf' },
-        { path: './font/DanaVF.woff2' },
-        { path: './font/DanaVF.woff' },
-    ],
+    src: [{ path: './font/DanaVF.woff2' }, { path: './font/DanaVF.woff' }],
 })
 
 export const metadata: Metadata = {
