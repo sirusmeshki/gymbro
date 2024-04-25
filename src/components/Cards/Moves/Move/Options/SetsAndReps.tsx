@@ -1,5 +1,5 @@
 import NumberInput from '@/components/Input/NumberInput'
-import { SetsAndRepsProps } from '../../../models'
+import { SetsAndRepsProps } from '@/components/Cards/models'
 
 const SetsAndReps: React.FC<SetsAndRepsProps> = ({ SARs, setSARs }) => {
     const sets = SARs?.single?.sets

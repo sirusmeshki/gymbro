@@ -2,15 +2,15 @@ import { FC } from 'react'
 
 import Image from 'next/image'
 
-import { InfoProps } from '../../../models'
+import { InfoProps } from '@/components/Cards/models'
 
 const Info: FC<InfoProps> = ({ name, effective_muscle, image_url }) => {
     return (
         <div className="border-top flex h-full min-w-full items-center">
             <div className="aspect-square h-full p-1">
                 <Image
-                    className="h-full w-full object-contain"
-                    src={image_url ? image_url : '/icon/arrow.svg'}
+                    className="h-full w-full object-contain opacity-20"
+                    src={image_url ? image_url : '/icon/image-placeholder.svg'}
                     alt={`${image_url} poster`}
                     width={100}
                     height={100}

@@ -6,7 +6,7 @@ import { useLocalStorage, useReadLocalStorage } from 'usehooks-ts'
 
 import Button from '@/components/Button'
 
-import { SARsProps, WorkoutProps } from '../../../models'
+import { SARsProps, WorkoutProps } from '@/components/Cards/models'
 import {
     onErrorToast,
     onSuccessToast,

@@ -1,4 +1,4 @@
-import { RestProps } from '../../../models'
+import { RestProps } from '@/components/Cards/models'
 
 import NumberInput from '@/components/Input/NumberInput'
 

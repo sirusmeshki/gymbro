@@ -7,7 +7,7 @@ import SetsAndReps from './SetsAndReps'
 import Submits from './Submits'
 import Info from './Info'
 
-import { MoveProps, SARsProps } from '../../../models'
+import { MoveProps, SARsProps } from '@/components/Cards/models'
 
 const Options: FC<MoveProps> = ({
     name,
