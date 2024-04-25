@@ -1,3 +1,5 @@
+'use client'
+
 import { FC, useState } from 'react'
 
 import Button from '@/components/Button'
@@ -27,8 +29,8 @@ const Workout: FC<WorkoutProps> = ({
         <li className={`border-bottom flex h-24 items-center justify-center`}>
             <div className="aspect-square h-full p-1">
                 <Image
-                    className="h-full w-full object-contain"
-                    src={image_url ? image_url : '/icon/arrow-left.svg'}
+                    className="h-full w-full object-contain opacity-10"
+                    src={image_url ? image_url : '/icon/image-placeholder.svg'}
                     alt={`${image_url} poster`}
                     width={100}
                     height={100}
