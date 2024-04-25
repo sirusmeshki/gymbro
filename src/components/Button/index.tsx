@@ -1,3 +1,5 @@
+'use client'
+
 import { FC } from 'react'
 
 import Image from 'next/image'
@@ -36,15 +38,14 @@ const Button: FC<ButtonProps> = ({
                 cta && 'w-full bg-lightBlue text-xl font-semibold',
                 className && className
             )}>
-            {!disabled && (
-                <div
-                    className={clsx(
-                        'absolute flex h-full w-full translate-y-full items-center justify-center  bg-lightBlue text-xs  font-bold delay-75 duration-200 ease-transition-button group-hover:translate-y-0 first-line:sm:text-sm',
-                        cta && 'bg-white'
-                    )}>
-                    {placeholder}
-                </div>
-            )}
+            <div
+                className={clsx(
+                    'absolute flex h-full w-full translate-y-full items-center justify-center bg-lightBlue text-xs font-bold  delay-75 duration-200 ease-transition-button  first-line:sm:text-sm',
+                    cta && 'bg-white',
+                    !disabled && 'group-hover:translate-y-0'
+                )}>
+                {placeholder}
+            </div>
 
             {icon && (
                 <Image
@@ -60,7 +61,7 @@ const Button: FC<ButtonProps> = ({
                 <div
                     className={clsx(
                         'flex h-full w-full items-center justify-center text-sm font-extrabold',
-                        disabled && 'bg-gray-200 opacity-20'
+                        disabled && 'opacity-20'
                     )}>
                     {cta}
                 </div>

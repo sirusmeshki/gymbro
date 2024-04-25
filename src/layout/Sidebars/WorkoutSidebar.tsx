@@ -5,15 +5,16 @@ import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 
-import { useLocalStorage, useReadLocalStorage } from 'usehooks-ts'
+import { useIsClient, useLocalStorage, useReadLocalStorage } from 'usehooks-ts'
 
 import Button from '@/components/Button'
-// import Workouts from '@/'
 import Selectbox from '@/components/Input/Selectbox'
 import Workouts from '@/components/Cards/Workouts/Move'
+import { WorkoutProps } from '@/components/Cards/models'
 
 const WorkoutSidebar = () => {
-    const workouts = useReadLocalStorage('workouts')
+    const workouts = useReadLocalStorage<WorkoutProps[]>('workouts')
+    const isClient = useIsClient()
 
     return (
         <aside className="absolute flex min-w-[480px] translate-x-full flex-col lg:fixed lg:h-[calc(100dvh-42px)] lg:translate-x-0">
@@ -21,8 +22,7 @@ const WorkoutSidebar = () => {
             <Link href="/plan" className="border-top mb-44 h-32">
                 <Button
                     cta="ساخت برنامه"
-                    disabled={!workouts}
-                    // disabled={isEditing}
+                    disabled={isClient && !workouts}
                     placeholder={
                         <Image
                             src="/icon/arrow-left.svg"
