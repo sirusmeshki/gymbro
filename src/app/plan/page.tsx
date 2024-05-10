@@ -14,10 +14,10 @@ import Footer from '@/components/Cards/Workouts/Plan/Settings/Footer'
 
 const PlanPage = () => {
     return (
-        <section className="layout-padding relative flex h-full w-full flex-col-reverse lg:flex-row">
+        <section className="layout-padding relative flex h-full w-full flex-col-reverse overflow-hidden lg:flex-row">
             <PlanSettingsSidebar />
-            <div className="border-bottom flex w-full justify-center px-2 py-4">
-                <main className="mx-2 flex h-fit w-[595px] flex-col gap-4 border border-black bg-white p-4">
+            <div className="border-bottom oveflow-x-scroll flex w-full justify-center px-2 py-4">
+                <main className=" mx-2 flex h-fit w-full min-w-[595px] scale-50 flex-col gap-4 border border-black bg-white p-4 sm:scale-75 md:w-fit md:scale-100">
                     <Header />
                     <PersonalInfo />
                     <PlanWorkouts />
