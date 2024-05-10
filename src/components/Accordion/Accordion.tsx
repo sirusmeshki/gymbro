@@ -21,7 +21,7 @@ const Accordion: FC<AccordionProps> = ({ title, children }) => {
             <header
                 className="flex cursor-pointer items-center justify-between gap-1 px-5 py-8"
                 onClick={() => toggle()}>
-                <h5 className="text-base font-bold text-neutral-800">
+                <h5 className="text-sm font-bold text-neutral-800 sm:text-base">
                     {title}
                 </h5>
                 <Image

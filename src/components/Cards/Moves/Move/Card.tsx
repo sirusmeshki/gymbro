@@ -15,9 +15,9 @@ const Card: FC<MoveProps> = ({
                 className="group h-full w-full cursor-pointer"
                 onClick={() => onOpenOptions?.()}>
                 {/* Move image */}
-                <div className="border-bottom aspect-square p-40">
+                <div className="border-bottom flex aspect-square items-center justify-center">
                     <Image
-                        className="h-fit w-full object-contain opacity-20"
+                        className="--h-fit --w-full h-10 w-10 object-contain opacity-20"
                         src={
                             image_url
                                 ? image_url
@@ -26,6 +26,7 @@ const Card: FC<MoveProps> = ({
                         alt={`عکس ${name}`}
                         width={10}
                         height={10}
+                        priority
                     />
                 </div>
                 {/* Move info */}

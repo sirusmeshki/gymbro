@@ -26,8 +26,7 @@ const config: Config = {
                 // lightBlue: '#CDE6FA',
                 lightBlue: '#d6edff',
                 // borderColor: '#000',
-                // borderColor: '#f1f1f1',
-                borderColor: '#',
+                borderColor: '#f2f2f2',
             },
             boxborder: {
                 //Borders
