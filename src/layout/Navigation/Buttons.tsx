@@ -21,7 +21,7 @@ const Buttons: FC<ButtonsProps> = ({ className }) => {
                 `
                 border-top
                 flex
-                h-16
+                h-20
                 w-full
                 items-center
                 justify-center
@@ -43,7 +43,7 @@ const Buttons: FC<ButtonsProps> = ({ className }) => {
                                 activeSegment === button.activeSegment
                                     ? 'bg-lightBlue'
                                     : '',
-                                'border-right'
+                                'sm:border-right'
                             )}
                             placeholder={button.placeholder}
                             icon={button.icon}
