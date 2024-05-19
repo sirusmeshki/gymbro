@@ -1,5 +1,7 @@
 import { Metadata } from 'next'
+import { Suspense } from 'react'
 
+import Loading from './loading'
 import WorkoutSidebar from '@/layout/Sidebars/WorkoutSidebar'
 import Search from '@/components/Input/Search'
 import Moves from '@/components/Cards/Moves'
@@ -30,12 +32,14 @@ const MovesPage = ({
                     </div>
 
                     {/* Move List */}
-                    <div className="grid h-fit w-full auto-rows-fr grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 3xl:grid-cols-5">
-                        <Moves
-                            moveQuery={moveQuery}
-                            muscleQuery={muscleQuery}
-                        />
-                    </div>
+                    <Suspense fallback={<Loading />}>
+                        <div className="grid h-fit w-full auto-rows-fr grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 3xl:grid-cols-5">
+                            <Moves
+                                moveQuery={moveQuery}
+                                muscleQuery={muscleQuery}
+                            />
+                        </div>
+                    </Suspense>
                 </div>
             </section>
         </>
