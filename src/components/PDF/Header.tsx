@@ -1,6 +1,6 @@
 import { useReadLocalStorage } from 'usehooks-ts'
 
-import { Image, StyleSheet, Text, View } from '@react-pdf/renderer'
+import { Image as PdfImage, StyleSheet, Text, View } from '@react-pdf/renderer'
 
 const styles = StyleSheet.create({
     container: {
@@ -29,9 +29,9 @@ const Header = () => {
 
     return (
         <View style={styles.container}>
-            <Image style={{ width: '54pt' }} src={'/logo.png'} />
+            <PdfImage style={{ width: '54pt' }} src={'/logo.png'} />
             {code ? <Text style={styles.code}>{`#17BB`}</Text> : null}
-            {qr ? <Image style={styles.qr} src={'/qr.png'} /> : null}
+            {qr ? <PdfImage style={styles.qr} src={'/qr.png'} /> : null}
         </View>
     )
 }

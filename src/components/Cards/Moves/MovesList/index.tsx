@@ -9,7 +9,7 @@ const MovesList: FC<MovesProps> = ({ moves }) => {
         <>
             {moves?.map((move) => (
                 <Move
-                    key={move.id}
+                    key={move.moveId}
                     name={move.name}
                     image_url={move.image_url}
                     effective_muscle={move.effective_muscle}

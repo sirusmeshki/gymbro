@@ -12,13 +12,12 @@ export const metadata: Metadata = {
     description: 'لیست تمامی حرکات بدنسازی',
 }
 
-const MovesPage = ({
+const MovesPage = async ({
     searchParams,
 }: {
-    searchParams?: { move?: string; muscle?: string }
+    searchParams?: Promise<{ move?: string; muscle?: string }>
 }) => {
-    const moveQuery = searchParams?.move || ''
-    const muscleQuery = searchParams?.muscle || ''
+    const { move = '', muscle = '' } = (await searchParams) ?? {}
 
     return (
         <>
@@ -35,8 +34,8 @@ const MovesPage = ({
                     <Suspense fallback={<Loading />}>
                         <div className="grid h-fit w-full auto-rows-fr grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 3xl:grid-cols-5">
                             <Moves
-                                moveQuery={moveQuery}
-                                muscleQuery={muscleQuery}
+                                moveQuery={move}
+                                muscleQuery={muscle}
                             />
                         </div>
                     </Suspense>

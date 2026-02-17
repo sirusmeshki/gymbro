@@ -1,7 +1,7 @@
 import { StaticImport } from 'next/dist/shared/lib/get-img-props'
 
 export type MoveProps = {
-    id?: number
+    moveId?: number
     name: string
     effective_muscle: string
     image_url?: string | null

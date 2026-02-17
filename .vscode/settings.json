@@ -1,8 +1,9 @@
 {
-  "editor.smoothScrolling": true,
-  "editor.cursorBlinking": "smooth",
-  "editor.formatOnPaste": true,
-  "markdown.preview.lineHeight": 1.6,
-  "editor.fontFamily": "Fira Code",
-  "editor.fontSize": 14
+    "editor.smoothScrolling": true,
+    "editor.cursorBlinking": "smooth",
+    "editor.formatOnPaste": true,
+    "markdown.preview.lineHeight": 1.6,
+    "editor.fontFamily": "Fira Code",
+    "editor.fontSize": 14,
+    "vscord.app.privacyMode.enable": false
 }
