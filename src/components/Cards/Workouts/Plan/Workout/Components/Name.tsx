@@ -16,7 +16,9 @@ const Name: FC<NameProps> = ({ name, pdf, className, style }) => {
     return (
         <>
             {pdf ? (
-                <Text style={[styles.text, style]}>{name}</Text>
+                <Text style={style ? [styles.text, style] : styles.text}>
+                    {name}
+                </Text>
             ) : (
                 <h3 className={clsx('text-sm font-bold', className)}>{name}</h3>
             )}

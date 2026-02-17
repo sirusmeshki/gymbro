@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { Suspense } from 'react'
 
 import { Metadata } from 'next'
 import Image from 'next/image'
@@ -12,12 +12,13 @@ export const metadata: Metadata = {
     description: 'اسکن برنامه بدنسازی جیم برو',
 }
 
-const ScanPage: FC = ({
+const ScanPage = async ({
     searchParams,
 }: {
-    searchParams?: { plan?: string }
+    searchParams?: Promise<{ plan?: string }>
 }) => {
-    const planQuery = searchParams?.plan || ''
+    const { plan = '' } = (await searchParams) ?? {}
+    const planQuery = plan
 
     return (
         <section className="layout-height flex w-full">
@@ -48,7 +49,12 @@ const ScanPage: FC = ({
                     />
                 </div>
                 <div className="sm:border-top flex h-36 w-full shrink-0 flex-col sm:h-20 sm:flex-row md:h-24 lg:h-28 xl:h-40">
-                    <ScanSearch />
+                    <Suspense
+                        fallback={
+                            <div className="border-bottom h-full w-full sm:border-b-0" />
+                        }>
+                        <ScanSearch />
+                    </Suspense>
                     <Link
                         className="border-bottom sm:border-right h-40 w-full sm:h-auto sm:border-b-0"
                         href={`/scan/${planQuery}`}>

@@ -75,7 +75,7 @@ const One: FC<WorkoutProps> = ({ index, name, rest, SARs, image_url, pdf }) => {
 
                     {/* Infos */}
                     <View style={styles.infosContainer}>
-                        <Name style={{}} name={name} pdf />
+                        <Name name={name} pdf />
 
                         {/* Details = Rest / SAR */}
                         <View style={styles.detailsContainer}>
@@ -100,7 +100,7 @@ const One: FC<WorkoutProps> = ({ index, name, rest, SARs, image_url, pdf }) => {
                         image_url={image_url}
                     />
                     <div className="flex w-full items-center justify-between gap-20 p-3">
-                        <Name style={{}} name={name} />
+                        <Name name={name} />
                         <div className="flex items-center justify-center gap-2">
                             <Rest rest={rest} />
                             <div className="w-12">

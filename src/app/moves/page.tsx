@@ -26,8 +26,13 @@ const MovesPage = async ({
                 <div className="flex w-full flex-col lg:mr-[480px]">
                     {/* Options */}
                     <div className="border-bottom z-20 flex h-32 w-full flex-col sm:h-20 sm:flex-row md:h-24">
-                        <Search />
-                        <Filter />
+                        <Suspense
+                            fallback={
+                                <div className="flex h-full w-full flex-col sm:flex-row" />
+                            }>
+                            <Search />
+                            <Filter />
+                        </Suspense>
                     </div>
 
                     {/* Move List */}

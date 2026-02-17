@@ -96,7 +96,6 @@ const Two: FC<WorkoutProps> = ({ index, name, rest, SARs, image_url, pdf }) => {
                             image_url={image_url}
                         />
                         <Name
-                            style={{}}
                             className="p-3 text-center"
                             name={name}
                         />

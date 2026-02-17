@@ -1,5 +1,6 @@
 import { SARsProps } from '@/components/Cards/models'
 import { StaticImport } from 'next/dist/shared/lib/get-img-props'
+import type { Style } from '@react-pdf/types'
 
 export type MoveImageProps = {
     className?: string
@@ -10,7 +11,8 @@ export type MoveImageProps = {
 
 export type NameProps = {
     className?: string
-    style: object
+    // Used only for the PDF branch (react-pdf <Text />)
+    style?: Style
     name: string
     pdf?: boolean
 }
